@@ -185,6 +185,7 @@ def proximityReport(native_id):
 
     return [["Rank: " + str(rank_v) + "/" + str(len(proximity_n)), native_v, proximity_v],["Rank: " + str(rank_p)+ "/" + str(len(proximity_n)),native_p, proximity_p], ["Rank: " + str(rank_n)+ "/" + str(len(proximity_n)),native_n, proximity_n]]
 
+# Graph 1
 def ruleViz(url_id):
     SMALL_SIZE = 16
     MEDIUM_SIZE = 20
@@ -221,6 +222,7 @@ def ruleViz(url_id):
     
     return plot
 
+# Graph 2
 def violationViz(url_id):
     SMALL_SIZE = 16
     MEDIUM_SIZE = 20
@@ -257,6 +259,7 @@ def violationViz(url_id):
     
     return plot
 
+# Graph 3
 def statusViz(url_id):
     SMALL_SIZE = 16
     MEDIUM_SIZE = 20
@@ -300,7 +303,7 @@ native_popratio = [values[2][1]]
 non_violations = values[0][2]
 non_popratio = values[2][2]
 
-
+# Graph 4
 def relativeViolations():
     configure_plotly_browser_state()
     fig = go.Figure()
@@ -333,3 +336,5 @@ fig = px.scatter(combined, x="Unaddressed", y="Resolved", color="Type", opacity 
                   hover_data=['TotalVio'])
 fig.show()
 
+
+# name of establishment, city, county, state, 

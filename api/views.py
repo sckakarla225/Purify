@@ -5,4 +5,3 @@ from rest_framework.response import Response
 
 # CREATE VIEWS HERE
 
-
