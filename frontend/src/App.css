@@ -30,7 +30,33 @@
 }
 
 /* HOME */
+.home-page-container {
+    height: 100vh;
+    background: url(./images/home_bg.png) no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
 
+.home-header-tag {
+  font-size: 50px;
+  color: white;
+  text-shadow: 3px 3px 4px #000000;
+}
+
+.home-button {
+    border: none; 
+    background-color: #77B3D4;
+    font-size: 30px; 
+    font-weight: bold;
+    display: block;
+    float: right;
+    text-align: center;
+    height: 65px; 
+    width: 400px; 
+    text-decoration: none;
+    color: black;
+    padding-top: 15px; 
+}
 
 /* INTERACTIVE MAP  */
 
