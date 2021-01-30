@@ -12,7 +12,7 @@ export const InteractiveMap = () => {
 
     return (
         <div>
-            <Drawer anchor='right' open={menuOpen} onClose={() => setMenuOpen(false)}>
+            <Drawer anchor='left' open={menuOpen} onClose={() => setMenuOpen(false)}>
                 <Menu />
             </Drawer>
             <button onClick={() => setMenuOpen(true)}>MENU</button>

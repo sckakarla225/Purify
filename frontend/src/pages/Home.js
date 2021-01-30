@@ -13,11 +13,16 @@ export const Home = () => {
 
     return (
         <div>
-            <Drawer anchor='right' open={menuOpen} onClose={() => setMenuOpen(false)}>
+            <Drawer 
+                anchor='left' 
+                open={menuOpen} 
+                onClose={() => setMenuOpen(false)}
+            >
                 <Menu />
             </Drawer>
             <button onClick={() => setMenuOpen(true)}>MENU</button>
             <h1>HOME</h1>
+            <iframe id="igraph" scrolling="no" style={{ border:"none" }} seamless="seamless" src="https://plotly.com/~amotiani22/33.embed" height="525" width="100%"></iframe>
             <Link to="/map">GO TO MAP</Link>
         </div>
     )

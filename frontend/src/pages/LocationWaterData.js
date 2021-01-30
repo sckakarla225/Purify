@@ -6,13 +6,14 @@ import Drawer from '@material-ui/core/Drawer';
 
 // COMPONENTS
 import { Menu } from '../components/Menu';
+import { requirePropFactory } from '@material-ui/core';
 
 export const LocationWaterData = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
         <div>
-            <Drawer anchor='right' open={menuOpen} onClose={() => setMenuOpen(false)}>
+            <Drawer anchor='left' open={menuOpen} onClose={() => setMenuOpen(false)}>
                 <Menu />
             </Drawer>
             <button onClick={() => setMenuOpen(true)}>MENU</button>

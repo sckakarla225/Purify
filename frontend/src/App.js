@@ -23,7 +23,12 @@ function App() {
         <WaterContextProvider>
             <Router>
                 <div className="App">
-                    {routes.map(({ path, Component }) => (
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                        <Route exact path="/map" component={InteractiveMap} />
+                        <Route exact path="/data/:locationID" component={LocationWaterData} />
+                    </Switch>
+                    {/* {routes.map(({ path, Component }) => (
                       <Route key={path} exact path={path}>
                         {({ match }) => (
                           <CSSTransition
@@ -38,7 +43,7 @@ function App() {
                           </CSSTransition>
                         )}
                       </Route>
-                    ))}
+                    ))} */}
                     {/* <TransitionGroup>
                         <CSSTransition
                             timeout={2000}
