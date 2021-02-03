@@ -65,15 +65,3 @@ export const Home = () => {
         </div>
     )
 }
-
-// PROPS MANAGEMENT
-
-// Home.defaultProps = {
-//     title: "Purify",
-//     data: [],
-// }
-
-// Home.propTypes = {
-//     title: PropTypes.string, 
-//     waterData: PropTypes.array,
-// }

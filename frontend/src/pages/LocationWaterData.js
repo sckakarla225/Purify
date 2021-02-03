@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link, useParams } from 'react-router-dom';
 import logo from '../logo.svg';
 import PropTypes from 'prop-types';
@@ -11,10 +12,46 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 // COMPONENTS
 import { Menu } from '../components/Menu';
 import { requirePropFactory } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+
+// CONTEXT
+import { WaterContext } from '../context/WaterContext';
+
+const useStyles = makeStyles({
+    root: {
+      minWidth: 275,
+    },
+});
 
 export const LocationWaterData = () => {
     const { locationID } = useParams();
+    const { locations, getLocations } = useContext(WaterContext);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [locationData, setLocationData] = useState(null);
+    const [embedLinks, setEmbedLinks] = useState([]);
+
+    const classes = useStyles();
+
+    const getEmbedLinks = () => {
+        const embed = locationData["Embed"];
+        embed.map((link) => {
+            link.replace("\\", "");
+            console.log(link);
+        }); 
+    }
+
+    useEffect(() => {
+        if (locations === {}) {
+            getLocations();
+        }
+        if (locations !== {}) {
+            const index = Object.keys(locations).indexOf(locationID);
+            const locationData = Object.values(locations)[index]; 
+            setLocationData(locationData);
+        }
+        getEmbedLinks();
+    }, []);
 
     return (
         <div>
@@ -41,7 +78,37 @@ export const LocationWaterData = () => {
                 style={{ fontSize: 50 }}
                 onClick={() => setMenuOpen(true)}
             ></MenuRoundedIcon>
-            <h1>LOCATION WATER DATA</h1> 
+            <Grid container spacing={2}>
+                <Grid item xs={2}>
+                    <Card className={classes.root}>
+                        <h1>Leaderboard</h1>
+                    </Card>
+                </Grid>
+                <Grid item xs={5}>
+                    <Card className={classes.root}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}>
+                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src="https://plotly.com/~amotiani22/86.embed" height="525" width="100%"></iframe>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src="https://plotly.com/~amotiani22/88.embed" height="525" width="100%"></iframe>
+                            </Grid>
+                        </Grid>
+                    </Card>
+                </Grid>
+                <Grid item xs={5}>
+                    <Card className={classes.root}>
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}>
+                                <h1>Graph 1</h1>
+                            </Grid>
+                            <Grid item xs={12}>
+                                <h1>Graph 2</h1>
+                            </Grid>
+                        </Grid>
+                    </Card>
+                </Grid>
+            </Grid>
             <Link to="/">GO TO HOME</Link>
         </div>
     )

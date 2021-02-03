@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import PropTypes from 'prop-types';
@@ -12,37 +12,30 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import { Menu } from '../components/Menu';
 import { LocationInfoPopup } from '../components/LocationInfoPopup';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import IconButton from '@material-ui/core/IconButton';
+import ErrorIcon from '@material-ui/icons/Error';
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
 
 export const InteractiveMap = () => {
-    const { locations } = useContext(WaterContext);
+    const { locations, getLocations } = useContext(WaterContext);
     const [menuOpen, setMenuOpen] = useState(false);
     const [viewport, setViewport] = useState({
         latitude: 36.7783, 
         longitude: -119.4179, 
-        zoom: 14, 
+        zoom: 5, 
         width: "100vw", 
         height: "100vh",
     });
     const [selectedLocation, setSelectedLocation] = useState(null);
+    const [selectedLocationID, setSelectedLocationID] = useState("");
 
-    const renderLocations = () => {
-        Object.values(locations).map((location) => {
-            const currentIndex = Object.values(locations).indexOf(location);
-            const locationID = Object.keys(locations)[currentIndex]; 
-            return (
-                <Marker key={locationID} latitude={location["Latitude"]} longitude={location["Longitude"]}>
-                    {/* <IconButton color="primary" disableFocusRipple={true} onClick={() => {
-                        setSelectedLocation(location); 
-                    }}>
-                        <ErrorIcon />
-                    </IconButton> */}
-                </Marker>
-            )
-        })
-    };
+    useEffect(() => {
+        if (locations === {}) {
+            getLocations();
+        }
+    }, []);
 
     return (
         <div>
@@ -74,17 +67,30 @@ export const InteractiveMap = () => {
                     style={{ fontSize: 50 }}
                     onClick={() => setMenuOpen(false)}
                 ></MenuRoundedIcon>
-                {locations ? renderLocations : ""}
+                {locations ? Object.values(locations).map((location) => {
+                    const currentIndex = Object.values(locations).indexOf(location);
+                    const locationID = Object.keys(locations)[currentIndex]; 
+                    return (
+                        <Marker key={locationID} latitude={location["Latitude"]} longitude={location["Longitude"]}>
+                            <IconButton color="primary" disableFocusRipple={true} onClick={() => {
+                                setSelectedLocation(location); 
+                                setSelectedLocationID(locationID);
+                            }}>
+                                <ErrorIcon />
+                            </IconButton>
+                        </Marker>
+                    )
+                }) : ""}
                 {selectedLocation ? (
                     <Popup
-                        latitude={selectedLocation.latitude}
-                        longitude={selectedLocation.longitude}
+                        latitude={selectedLocation["Latitude"]}
+                        longitude={selectedLocation["Longitude"]}
                         onClose={() => {
                         setSelectedLocation(null);
                         }}
                     >
                         <LocationInfoPopup />
-                        <Link to={`/data/${selectedLocation.id}`}>SEE DATA!</Link>
+                        <Link to={`/data/${selectedLocationID}`}>SEE DATA!</Link>
                     </Popup>
                 ) : null}
             </ReactMapGL>
