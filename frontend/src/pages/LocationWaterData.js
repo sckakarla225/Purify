@@ -17,7 +17,6 @@ import Card from '@material-ui/core/Card';
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
-import data from '../waterdata_3.json';
 
 const useStyles = makeStyles({
     root: {
@@ -35,12 +34,14 @@ export const LocationWaterData = () => {
     const classes = useStyles();
 
     useEffect(() => {
-        const data = Object.values(data)[locationID]
-        setEmbedLinks(data["Embed"]);
+        Object.values(locations).map((location) => {
+            if (location["PWSID"] === locationID) {
+                setEmbedLinks(location["Embed"]);
+            }
+        });
         // const index = Object.keys(locations).indexOf(locationID);
         // const locationData = Object.values(locations)[index]; 
         // setLocationData(locationData);
-        console.log(embedLinks);
     }, []);
 
     return (
@@ -90,10 +91,10 @@ export const LocationWaterData = () => {
                     <Card className={classes.root}>
                         <Grid container spacing={1}>
                             <Grid item xs={12}>
-                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[3]} height="525" width="100%"></iframe>
+                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[2]} height="525" width="100%"></iframe>
                             </Grid>
                             <Grid item xs={12}>
-                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[4]} height="525" width="100%"></iframe>
+                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[3]} height="525" width="100%"></iframe>
                             </Grid>
                         </Grid>
                     </Card>

@@ -89,17 +89,22 @@ export const InteractiveMap = () => {
                 {locations ? Object.values(locations).map((location) => {
                     const currentIndex = Object.values(locations).indexOf(location);
                     const locationID = Object.keys(locations)[currentIndex]; 
-                    return (
-                        <Marker key={locationID} latitude={location["Latitude"]} longitude={location["Longitude"]}>
-                            <IconButton color="primary" disableFocusRipple={true} onClick={() => {
-                                setSelectedLocation(location); 
-                                setSelectedLocationID(location["PWS"]);
-                                console.log(location);
-                            }}>
-                                {determineRisk(location["Percentile"])}
-                            </IconButton>
-                        </Marker>
-                    )
+                    if (location["Latitude"] === null) {
+                        return ""
+                    } else {
+                        return (
+                            <Marker key={locationID} latitude={location["Latitude"]} longitude={location["Longitude"]}>
+                                <IconButton color="primary" disableFocusRipple={true} onClick={() => {
+                                    setSelectedLocation(location); 
+                                    setSelectedLocationID(location["PWSID"]);
+                                    console.log(location);
+                                    console.log(locationID);
+                                }}>
+                                    {determineRisk(location["Percentile"])}
+                                </IconButton>
+                            </Marker>
+                        )
+                    }
                 }) : ""}
                 {selectedLocation ? (
                     <Popup
@@ -115,7 +120,7 @@ export const InteractiveMap = () => {
                             totalRank={selectedLocation["Total Rank"]}
                             violations={selectedLocation["Native Violations"]}
                         />
-                        <Link to={'data/' + selectedLocation["PWS"]}>EXPLORE DATA!</Link>
+                        <Link to={'data/' + selectedLocationID}>EXPLORE DATA!</Link>
                     </Popup>
                 ) : null}
             </ReactMapGL>
