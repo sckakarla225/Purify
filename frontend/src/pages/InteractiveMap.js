@@ -41,11 +41,11 @@ export const InteractiveMap = () => {
             return (
                 <img src={redIcon} style={{ height: 30 }} />
             )
-        } else if (percentile <= 60 & percentile >= 30) {
+        } else if (percentile <= 60 & percentile >= 10) {
             return (
                 <img src={yellowIcon} style={{ height: 30 }} />
             )
-        } else if (percentile <= 30) {
+        } else if (percentile <= 10) {
             return (
                 <img src={greenIcon} style={{ height: 30 }} />
             )
@@ -93,7 +93,8 @@ export const InteractiveMap = () => {
                         <Marker key={locationID} latitude={location["Latitude"]} longitude={location["Longitude"]}>
                             <IconButton color="primary" disableFocusRipple={true} onClick={() => {
                                 setSelectedLocation(location); 
-                                setSelectedLocationID(locationID);
+                                setSelectedLocationID(location["PWS"]);
+                                console.log(location);
                             }}>
                                 {determineRisk(location["Percentile"])}
                             </IconButton>
@@ -114,7 +115,7 @@ export const InteractiveMap = () => {
                             totalRank={selectedLocation["Total Rank"]}
                             violations={selectedLocation["Native Violations"]}
                         />
-                        <Link to={`/data/${selectedLocationID}`}>EXPLORE DATA!</Link>
+                        <Link to={'data/' + selectedLocation["PWS"]}>EXPLORE DATA!</Link>
                     </Popup>
                 ) : null}
             </ReactMapGL>
