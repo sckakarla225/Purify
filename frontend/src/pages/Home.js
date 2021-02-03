@@ -55,7 +55,7 @@ export const Home = () => {
             <h1 className="home-header-tag">
                 Native American communities in California have a 30% higher risk of poor water quality than that of non-native communities.
             </h1>
-            <iframe id="igraph" scrolling="no" style={{ border:"none" }} seamless="seamless" src="https://plotly.com/~amotiani22/33.embed" height="525" width="100%"></iframe>
+            <iframe id="igraph" scrolling="no" style={{ border: "none", marginRight: 100 }} seamless="seamless" src="https://plotly.com/~amotiani22/33.embed" height="550" width="75%"></iframe>
             <Link to="/map" className="home-button">
                 SEE INTERACTIVE MAP 
                 <NavigateNextIcon

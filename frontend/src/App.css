@@ -41,6 +41,8 @@
   font-size: 50px;
   color: white;
   text-shadow: 3px 3px 4px #000000;
+  margin-left: 80px;
+  margin-right: 500px;
 }
 
 .home-button {
@@ -59,6 +61,13 @@
 }
 
 /* INTERACTIVE MAP  */
-
+.legend-container {
+    height: 400px;
+    width: 300px;
+    background-color: white;
+    box-shadow: 10px 10px 8px #888888;
+    margin-top: 400px;
+    margin-left: 50px;
+}
 
 /* LOCATION DATA */

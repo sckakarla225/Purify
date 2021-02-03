@@ -11,9 +11,14 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 // COMPONENTS
 import { Menu } from '../components/Menu';
 import { LocationInfoPopup } from '../components/LocationInfoPopup';
+import { Legend } from '../components/Legend';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 import IconButton from '@material-ui/core/IconButton';
 import ErrorIcon from '@material-ui/icons/Error';
+import greenIcon from '../images/green_water_icon.png'; 
+import yellowIcon from '../images/yellow_water_icon.png';
+import redIcon from '../images/red_water_icon.png';
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
@@ -31,11 +36,24 @@ export const InteractiveMap = () => {
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [selectedLocationID, setSelectedLocationID] = useState("");
 
-    useEffect(() => {
-        if (locations === {}) {
-            getLocations();
+    const determineRisk = (percentile) => {
+        if (percentile >= 60) {
+            return (
+                <img src={redIcon} style={{ height: 30 }} />
+            )
+        } else if (percentile <= 60 & percentile >= 30) {
+            return (
+                <img src={yellowIcon} style={{ height: 30 }} />
+            )
+        } else if (percentile <= 30) {
+            return (
+                <img src={greenIcon} style={{ height: 30 }} />
+            )
+        } else {
+            return "Error"
         }
-    }, []);
+    }
+
 
     return (
         <div>
@@ -60,13 +78,14 @@ export const InteractiveMap = () => {
             </Drawer>
             <ReactMapGL 
                 {...viewport}
-                mapboxApiAccessToken="pk.eyJ1Ijoic2tha2FybGEiLCJhIjoiY2tra2Y1eDd5MGE0dTJ3cGR6dW00azFleSJ9.5uqzvYCVIra99ZGYP--NhQ"
+                mapboxApiAccessToken="pk.eyJ1Ijoic2tha2FybGEiLCJhIjoiY2trcHJwbnZyMDBhazJ1cXRoMWVxeHhxciJ9.l9a6Aq0_kGENdIZPB-hCVg"
                 onViewportChange={(viewport) => setViewport(viewport)}
             >
                 <MenuRoundedIcon
                     style={{ fontSize: 50 }}
                     onClick={() => setMenuOpen(false)}
                 ></MenuRoundedIcon>
+                <Legend />
                 {locations ? Object.values(locations).map((location) => {
                     const currentIndex = Object.values(locations).indexOf(location);
                     const locationID = Object.keys(locations)[currentIndex]; 
@@ -76,7 +95,7 @@ export const InteractiveMap = () => {
                                 setSelectedLocation(location); 
                                 setSelectedLocationID(locationID);
                             }}>
-                                <ErrorIcon />
+                                {determineRisk(location["Percentile"])}
                             </IconButton>
                         </Marker>
                     )
@@ -89,8 +108,13 @@ export const InteractiveMap = () => {
                         setSelectedLocation(null);
                         }}
                     >
-                        <LocationInfoPopup />
-                        <Link to={`/data/${selectedLocationID}`}>SEE DATA!</Link>
+                        <LocationInfoPopup 
+                            name={selectedLocation["Native Name"]} 
+                            rank={selectedLocation["Rank"]}
+                            totalRank={selectedLocation["Total Rank"]}
+                            violations={selectedLocation["Native Violations"]}
+                        />
+                        <Link to={`/data/${selectedLocationID}`}>EXPLORE DATA!</Link>
                     </Popup>
                 ) : null}
             </ReactMapGL>
