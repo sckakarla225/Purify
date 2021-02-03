@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import PropTypes from 'prop-types';
@@ -12,8 +12,16 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 // COMPONENTS
 import { Menu } from '../components/Menu';
 
+// CONTEXT
+import { WaterContext } from '../context/WaterContext';
+
 export const Home = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { getLocations } = useContext(WaterContext);
+
+    useEffect(() => {
+        getLocations(); 
+    }, []);
 
     return (
         <div className="home-page-container">
