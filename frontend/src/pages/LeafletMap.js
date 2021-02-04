@@ -8,13 +8,19 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 
 // COMPONENTS
 import { MapContainer, Popup, TileLayer, Marker } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import L from 'leaflet';
 import { LocationInfoPopup } from '../components/LocationInfoPopup';
 import { Legend } from '../components/Legend';
 import logo from '../logo.svg';
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
+import { requirePropFactory } from '@material-ui/core';
+
+const markerIcon = new L.Icon({
+    iconUrl: require('../images/gray_water_icon.png'), 
+    iconSize: [25, 25],
+});
 
 export const LeafletMap = () => {
     const { locations } = useContext(WaterContext); 
@@ -24,22 +30,22 @@ export const LeafletMap = () => {
 
     const determineRisk = (percentile) => {
         if (percentile >= 60) {
-            const redIcon = new Icon({
-                iconUrl: '../images/red_water.svg', 
+            const redIcon = new L.Icon({
+                iconUrl: '../', 
                 iconSize: [25, 25], 
             });
 
             return redIcon; 
         } else if (percentile <= 60 & percentile >= 10) {
-            const yellowIcon = new Icon({
-                iconUrl: '../images/yellow_water.svg', 
+            const yellowIcon = new L.Icon({
+                iconUrl: '/yellow_water.svg', 
                 iconSize: [25, 25], 
             });
             
             return yellowIcon; 
         } else if (percentile <= 10) {
-            const greenIcon = new Icon({
-                iconUrl: '../images/green_water.svg', 
+            const greenIcon = new L.Icon({
+                iconUrl: '/green_water.svg', 
                 iconSize: [25, 25], 
             });
             
@@ -97,7 +103,6 @@ export const LeafletMap = () => {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
-                <Legend />
                 {locations ? Object.values(locations).map((location) => {
                     const currentIndex = Object.values(locations).indexOf(location);
                     const locationID = Object.keys(locations)[currentIndex]; 
@@ -115,16 +120,25 @@ export const LeafletMap = () => {
                                     console.log(location);
                                     console.log(locationID);
                                 }}
-                                icon={determineRisk(location["Percentile"])}
-                            />
+                            >
+                                <Popup>
+                                    <LocationInfoPopup 
+                                        name={location["Native Name"]} 
+                                        rank={location["Rank"]}
+                                        totalRank={location["Total Rank"]}
+                                        violations={location["Native Violations"]}
+                                        selectedLocationID={location["PWSID"].toString()}
+                                    />
+                                </Popup>
+                            </Marker>
                         )
                     }
                 }) : ""}
-                {selectedLocation ? (
+                {/* {selectedLocation && (
                     <Popup
                         position={[selectedLocation["Latitude"], selectedLocation["Longitude"]]}
                         onClose={() => {
-                        setSelectedLocation(null);
+                            setSelectedLocation(null);
                         }}
                     >
                         <LocationInfoPopup 
@@ -135,7 +149,7 @@ export const LeafletMap = () => {
                             selectedLocationID={selectedLocationID.toString()}
                         />
                     </Popup>
-                ) : null}
+                )} */}
             </MapContainer>
         </div>
     )
