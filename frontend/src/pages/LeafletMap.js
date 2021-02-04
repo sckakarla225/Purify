@@ -100,7 +100,7 @@ export const LeafletMap = () => {
 
             <MapContainer center={[36.7783, -119.4179]} zoom={6} className="leaflet-map-container">
                 <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    url="https://api.maptiler.com/maps/basic/{z}/{x}/{y}@2x.png?key=O6Gasq5pOk061crD9m5G"
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
                 {locations ? Object.values(locations).map((location) => {

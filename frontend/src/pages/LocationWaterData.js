@@ -76,6 +76,13 @@ export const LocationWaterData = (props) => {
             if (location["PWSID"] === locationID) {
                 setLocationData(location);
                 setEmbedLinks(location["Embed"]);
+                console.log(location["Non-Native Names"]);
+                location["Non-Native Names"].reverse();
+                location["Non-Native Violations"].reverse();
+                location["Non-Native Names"].splice(location["Rank"] - 1, 0, location["Native Name"]);
+                location["Non-Native Violations"].splice(location["Rank"] - 1, 0, location["Native Violations"]); 
+                console.log(location["Non-Native Names"]); 
+                console.log(location["Non-Native Violations"]); 
                 setViolationsNames(location["Non-Native Names"]);
                 setViolationsAmounts(location["Non-Native Violations"]); 
             }
@@ -125,7 +132,7 @@ export const LocationWaterData = (props) => {
                         <p className="area-data-value">{locationData["Native Violations"]}</p>
                     </Card>
                     <Card className={classes.leftBottomRoot}>
-                        <h1 className="violations-header">NON-NATIVE VIOLATIONS TRACKER</h1>
+                        <h1 className="violations-header">VIOLATIONS RANKING</h1>
                         {/* {() => {
                             const violationsNames = sortViolations(locationData["Non-Native Names"], locationData["Non-Native Violations"])[0]; 
                             const violationsAmounts = sortViolations(locationData["Non-Native Names"], locationData["Non-Native Violations"])[1];
@@ -152,6 +159,7 @@ export const LocationWaterData = (props) => {
                                     number={nameIndex + 1}
                                     violationName={name}
                                     violationAmount={violationAmount}
+                                    nativeViolation={nameIndex === locationData["Rank"] - 1 ? true : false}
                                 />
                             )
                         })}
