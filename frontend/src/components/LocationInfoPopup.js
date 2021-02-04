@@ -4,16 +4,16 @@ export const LocationInfoPopup = ({ name, rank, totalRank, violations, percentil
     return (
         <div>
             <div className="row">
-                <h1>Native Name</h1>
-                <p>{name}</p>
+                <h1 className="popup-header">Native Name:</h1>
+                <p className="popup-info">{name}</p>
             </div>
             <div className="row">
-                <p>Rank</p>
-                <p>{rank} / {totalRank}</p>
+                <p className="popup-header">Rank:</p>
+                <p className="popup-info">{rank} / {totalRank}</p>
             </div>
             <div className="row">
-                <p># of Violations</p>
-                <p>{violations}</p>
+                <p className="popup-header"># of Violations:</p>
+                <p className="popup-info">{violations}</p>
             </div>
         </div>
     )

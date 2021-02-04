@@ -33,7 +33,7 @@ export const Home = () => {
                 <div>
                     <div className="row">
                         <MenuRoundedIcon
-                            style={{ fontSize: 50 }}
+                            style={{ fontSize: 30, marginLeft: 15, marginTop: 10 }}
                             onClick={() => setMenuOpen(false)}
                         ></MenuRoundedIcon>
                     </div>
@@ -42,26 +42,37 @@ export const Home = () => {
                         <h1 className="menu-header">PURIFY</h1>
                         <div className="menu-buttons-container">
                             <Link to="/" className="menu-buttons">HOME</Link>
-                            <Link to="/data/90600193" className="menu-buttons">WATER MAP</Link>
+                            <Link to="/map" className="menu-buttons">WATER MAP</Link>
                         </div>
                     </div>
-                    <p>CA Water Data Challenge</p>
+                    <p style={{ textAlign: "center", marginTop: 50 }}>CA Water Data Challenge</p>
                 </div>
             </Drawer>
             <MenuRoundedIcon 
                 onClick={() => setMenuOpen(true)}
-                style={{ fontSize: 60 }}
+                style={{ fontSize: 50, marginLeft: 30, marginTop: 10 }}
             ></MenuRoundedIcon>
             <h1 className="home-header-tag">
-                Native American communities in California have a 30% higher risk of poor water quality than that of non-native communities.
+                Native American communities in California have a 30% higher risk of poor water quality than non-native communities.
             </h1>
-            <div className="container" style={{ height: 400, width: 1200}}>
-                <iframe id="igraph" scrolling="no" style={{ border: "none", marginRight: 100 }} seamless="seamless" src="https://plotly.com/~amotiani22/33.embed" height="550" width="75%"></iframe>
+            <div style={{ marginLeft: 80 }}>
+                <iframe 
+                    id="igraph" 
+                    scrolling="no" 
+                    style={{ border: "none", marginRight: 100 }} 
+                    seamless="seamless" 
+                    src="https://plotly.com/~amotiani22/33.embed" 
+                    height="300" width="750"
+                    logo="false"
+                    link="false"
+                    modebar="false"
+                >
+                </iframe>
             </div>
             <Link to="/map" className="home-button">
                 SEE INTERACTIVE MAP 
                 <NavigateNextIcon
-                    style={{ fontSize: 40 }}
+                    style={{ fontSize: 30, marginLeft: 15 }}
                 />
             </Link>
         </div>

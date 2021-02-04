@@ -23,7 +23,7 @@ import redIcon from '../images/red_water_icon.png';
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
 
-export const InteractiveMap = () => {
+export const InteractiveMap = (props) => {
     const { locations, getLocations } = useContext(WaterContext);
     const [menuOpen, setMenuOpen] = useState(false);
     const [viewport, setViewport] = useState({
@@ -78,11 +78,12 @@ export const InteractiveMap = () => {
             </Drawer>
             <ReactMapGL 
                 {...viewport}
-                mapboxApiAccessToken="pk.eyJ1Ijoic2tha2FybGEiLCJhIjoiY2trcHJwbnZyMDBhazJ1cXRoMWVxeHhxciJ9.l9a6Aq0_kGENdIZPB-hCVg"
+                mapboxApiAccessToken="pk.eyJ1Ijoic2tha2FybGEiLCJhIjoiY2tra2R6OXd6MDFlczJwbGpydzQ4anluYyJ9.N10YB_-af_8C_VwmNxyqYw"
+                mapStyle="mapbox://styles/skakarla/ckkke1moj2q2h17qqrot5m99a"
                 onViewportChange={(viewport) => setViewport(viewport)}
             >
                 <MenuRoundedIcon
-                    style={{ fontSize: 50 }}
+                    style={{ fontSize: 50, marginLeft: 30, marginTop: 10 }}
                     onClick={() => setMenuOpen(false)}
                 ></MenuRoundedIcon>
                 <Legend />
@@ -120,7 +121,15 @@ export const InteractiveMap = () => {
                             totalRank={selectedLocation["Total Rank"]}
                             violations={selectedLocation["Native Violations"]}
                         />
-                        <Link to={'data/' + selectedLocationID}>EXPLORE DATA!</Link>
+                        <button 
+                            className="explore-data-button" 
+                            onClick={() => {
+                                console.log(selectedLocationID);
+                                props.history.push(`/data/${selectedLocationID.toString()}`);
+                            }}
+                        >
+                            EXPLORE DATA!
+                        </button>
                     </Popup>
                 ) : null}
             </ReactMapGL>

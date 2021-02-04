@@ -3,18 +3,28 @@
 .menu-buttons {
     border: none; 
     background-color: #77B3D4;
-    font-size: 20px; 
+    font-size: 15px; 
     font-weight: bold;
     display: block;
     margin: auto;
     margin-top: 50px; 
     text-align: center;
-    height: 45px; 
-    width: 220px; 
+    height: 35px; 
+    width: 170px; 
     text-decoration: none;
     color: black;
     padding-top: 15px; 
     border-bottom: 5px solid grey;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.menu-logo {
+  height: 125px; 
+  width: 125px;
+  margin: auto;
+  display: block;
+  margin-top: 30px;
 }
 
 .menu-buttons:hover {
@@ -38,36 +48,95 @@
 }
 
 .home-header-tag {
-  font-size: 50px;
+  font-size: 40px;
   color: white;
   text-shadow: 3px 3px 4px #000000;
   margin-left: 80px;
-  margin-right: 500px;
+  margin-right: 200px;
+  margin-top: 10px;
+  font-family: rubik, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.4;
 }
 
 .home-button {
     border: none; 
     background-color: #77B3D4;
-    font-size: 30px; 
-    font-weight: bold;
+    font-size: 20px; 
     display: block;
     float: right;
     text-align: center;
-    height: 65px; 
-    width: 400px; 
+    height: 45px; 
+    width: 300px; 
     text-decoration: none;
     color: black;
-    padding-top: 15px; 
+    padding-top: 5px; 
+    margin-top: -200px;
+    margin-right: 30px;
+    box-shadow: 5px 5px 5px black;
+    font-family: rubik, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.home-button:hover {
+  background-color: white;
 }
 
 /* INTERACTIVE MAP  */
 .legend-container {
-    height: 400px;
-    width: 300px;
+    height: 210px;
+    width: 255px;
     background-color: white;
     box-shadow: 10px 10px 8px #888888;
-    margin-top: 400px;
+    margin-top: 265px;
     margin-left: 50px;
+    padding: 20px;
+}
+
+.legend-description {
+  font-family: rubik, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.legend-title {
+  font-family: rubik, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.popup-header {
+  font-size: 18px;
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.popup-info {
+  font-size: 16px;
+  text-align: center;
+}
+
+.explore-data-button {
+    border: none; 
+    background-color: #77B3D4;
+    font-size: 15px; 
+    font-weight: bold;
+    display: block;
+    margin: auto;
+    margin-top: 50px; 
+    text-align: center;
+    height: 30px; 
+    width: 150px; 
+    text-decoration: none;
+    color: black;
+    padding-top: 15px; 
+    border-bottom: 5px solid grey;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* LOCATION DATA */
