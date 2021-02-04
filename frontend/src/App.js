@@ -6,6 +6,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 // PAGES
 import { Home } from './pages/Home';
 import { InteractiveMap } from './pages/InteractiveMap';
+import { LeafletMap } from './pages/LeafletMap';
 import { LocationWaterData } from './pages/LocationWaterData';
 
 // CONTEXT
@@ -14,7 +15,7 @@ import { WaterContextProvider } from './context/WaterContext';
 // ROUTES
 const routes = [
     { path: '/', name: 'Home', Component: Home },
-    { path: '/map', name: 'Interactive Map', Component: InteractiveMap },
+    { path: '/map', name: 'Interactive Map', Component: LeafletMap },
     { path: '/data/:locationID', name: 'Location Data', Component: LocationWaterData },
 ]
 
@@ -25,7 +26,7 @@ function App() {
                 <div className="App">
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route exact path="/map" component={InteractiveMap} />
+                        <Route exact path="/map" component={LeafletMap} />
                         <Route exact path="/data/:locationID" component={LocationWaterData} />
                     </Switch>
                     {/* {routes.map(({ path, Component }) => (

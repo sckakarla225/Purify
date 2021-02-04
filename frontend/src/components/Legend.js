@@ -11,12 +11,12 @@ export const Legend = () => {
 
     return (
         <div className="legend-container">
-            <h1 className="legend-title" style={{ fontSize: 18, textAlign: "center"}}>WATER QUALITY RANK</h1>
+            <h1 className="legend-title" style={{ fontSize: 14, textAlign: "center"}}>WATER QUALITY RANK</h1>
             <div className="row">
-                <img src={redIcon} style={{ height: 50, width: 40, display: "inline-block" }} />
+                <img src={redIcon} style={{ height: 40, width: 35, display: "inline-block" }} />
                 <p className="legend-description" style={{ 
                     display: "inline-block", 
-                    fontSize: 16, 
+                    fontSize: 14, 
                     verticalAlign: 'middle',
                     marginTop: -15,
                     marginLeft: 10,
@@ -25,24 +25,24 @@ export const Legend = () => {
                 </p>
             </div>
             <div className="row">
-                <img src={yellowIcon} style={{ height: 50, width: 40, display: "inline-block" }} />
+                <img src={yellowIcon} style={{ height: 40, width: 35, display: "inline-block" }} />
                 <p className="legend-description" style={{ 
                     display: "inline-block",
                     marginTop: -15,
                     verticalAlign: 'middle',
-                    fontSize: 16, 
+                    fontSize: 12, 
                     marginLeft: 10,
                 }}>
                     Relatively Moderate Risk
                 </p>
             </div>
             <div className="row">
-                <img src={greenIcon} style={{ height: 50, width: 40, display: "inline-block" }} />
+                <img src={greenIcon} style={{ height: 40, width: 35, display: "inline-block" }} />
                 <p className="legend-description" style={{ 
                     display: "inline-block",
                     marginTop: -15,
                     verticalAlign: 'middle',
-                    fontSize: 16, 
+                    fontSize: 14, 
                     marginLeft: 10,
                 }}>
                     Relatively Low Risk

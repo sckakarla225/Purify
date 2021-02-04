@@ -37,6 +37,9 @@
 
 .menu-header {
   text-align: center;
+  font-family: rubik, sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 /* HOME */
@@ -86,12 +89,12 @@
 
 /* INTERACTIVE MAP  */
 .legend-container {
-    height: 210px;
-    width: 255px;
+    height: 195px;
+    width: 190px;
     background-color: white;
     box-shadow: 10px 10px 8px #888888;
-    margin-top: 265px;
-    margin-left: 50px;
+    margin-top: 50px;
+    margin-left: 10px;
     padding: 20px;
 }
 
@@ -137,6 +140,19 @@
     border-bottom: 5px solid grey;
     margin-left: 20px;
     margin-right: 20px;
+}
+
+.leaflet-map-container {
+  width: 80%;
+  height: 100vh;
+  float: right;
+  display: inline-block;
+}
+
+.map-info-container {
+  width: 20%;
+  height: 100vh;
+  display: inline-block;
 }
 
 /* LOCATION DATA */
