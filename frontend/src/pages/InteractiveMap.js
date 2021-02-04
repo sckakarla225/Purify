@@ -14,6 +14,7 @@ import { LocationInfoPopup } from '../components/LocationInfoPopup';
 import { Legend } from '../components/Legend';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import ReactMapGL, { Marker, Popup } from 'react-map-gl';
+import "mapbox-gl/dist/mapbox-gl.css";
 import IconButton from '@material-ui/core/IconButton';
 import ErrorIcon from '@material-ui/icons/Error';
 import greenIcon from '../images/green_water_icon.png'; 
@@ -53,7 +54,6 @@ export const InteractiveMap = (props) => {
             return "Error"
         }
     }
-
 
     return (
         <div>
@@ -120,16 +120,8 @@ export const InteractiveMap = (props) => {
                             rank={selectedLocation["Rank"]}
                             totalRank={selectedLocation["Total Rank"]}
                             violations={selectedLocation["Native Violations"]}
+                            selectedLocationID={selectedLocationID.toString()}
                         />
-                        <button 
-                            className="explore-data-button" 
-                            onClick={() => {
-                                console.log(selectedLocationID);
-                                props.history.push(`/data/${selectedLocationID.toString()}`);
-                            }}
-                        >
-                            EXPLORE DATA!
-                        </button>
                     </Popup>
                 ) : null}
             </ReactMapGL>
