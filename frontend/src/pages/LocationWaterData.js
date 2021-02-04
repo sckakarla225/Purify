@@ -8,9 +8,11 @@ import '../App.css';
 // UI
 import Drawer from '@material-ui/core/Drawer';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 // COMPONENTS
 import { Menu } from '../components/Menu';
+import { StandingPlace } from '../components/StandingPlace';
 import { requirePropFactory } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -19,38 +21,74 @@ import Card from '@material-ui/core/Card';
 import { WaterContext } from '../context/WaterContext';
 
 const useStyles = makeStyles({
-    root: {
+    leftRoot: {
       minWidth: 275,
+      marginLeft: 30,
+    },
+    leftBottomRoot: {
+        minWidth: 275,
+        marginLeft: 30,
+        marginTop: 15,
+    },
+    rightRoot: {
+        minWidth: 275,
+        marginRight: 20,
+        marginBottom: 20,
     },
 });
 
-export const LocationWaterData = () => {
+export const LocationWaterData = (props) => {
     const { locationID } = useParams();
-    const { locations, getLocations } = useContext(WaterContext);
+    const { locations } = useContext(WaterContext);
     const [menuOpen, setMenuOpen] = useState(false);
     const [locationData, setLocationData] = useState({});
     const [embedLinks, setEmbedLinks] = useState([]);
+    const [violationsAmounts, setViolationsAmounts] = useState([]); 
+    const [violationsNames, setViolationsNames] = useState([]); 
 
     const classes = useStyles();
+
+    const sortViolations = (vnames, vamounts) => {
+        const violationNames = vnames;
+        const violationAmounts = vamounts;
+        console.log(violationNames);
+        console.log(violationAmounts);
+
+        let combinedList = [];
+        for (let i = 0; i < violationNames.length; i++) {
+            combinedList.push({ "violationName": violationNames[i], "violationAmount": violationAmounts[i]});
+        };
+
+        combinedList.sort((a, b) => {
+            return ((a.violationName < b.violationName) ? -1 : ((a.violationName == b.violationName) ? 0 : 1));
+        });
+
+        for (let j = 0; j < combinedList.length; j++) {
+            violationNames[j] = combinedList[j].violationName; 
+            violationAmounts[j] = combinedList[j].violationAmount; 
+        }
+
+        return [violationNames, violationAmounts];
+    }
 
     useEffect(() => {
         Object.values(locations).map((location) => {
             if (location["PWSID"] === locationID) {
+                setLocationData(location);
                 setEmbedLinks(location["Embed"]);
+                setViolationsNames(location["Non-Native Names"]);
+                setViolationsAmounts(location["Non-Native Violations"]); 
             }
         });
-        // const index = Object.keys(locations).indexOf(locationID);
-        // const locationData = Object.values(locations)[index]; 
-        // setLocationData(locationData);
     }, []);
 
     return (
-        <div>
+        <div className="data-page-container">
             <Drawer anchor='left' open={menuOpen} onClose={() => setMenuOpen(false)}>
                 <div>
                     <div className="row">
                         <MenuRoundedIcon
-                            style={{ fontSize: 50 }}
+                            style={{ fontSize: 30, marginLeft: 15, marginTop: 10 }}
                             onClick={() => setMenuOpen(false)}
                         ></MenuRoundedIcon>
                     </div>
@@ -62,45 +100,138 @@ export const LocationWaterData = () => {
                             <Link to="/map" className="menu-buttons">WATER MAP</Link>
                         </div>
                     </div>
-                    <p>CA Water Data Challenge</p>
+                    <p style={{ textAlign: "center", marginTop: 50 }}>CA Water Data Challenge</p>
                 </div>
             </Drawer>
-            <MenuRoundedIcon
-                style={{ fontSize: 50 }}
-                onClick={() => setMenuOpen(true)}
-            ></MenuRoundedIcon>
+            <div>
+                <MenuRoundedIcon
+                    style={{ fontSize: 50, marginLeft: 30, marginTop: 10, display: 'inline-block' }}
+                    onClick={() => setMenuOpen(true)}
+                ></MenuRoundedIcon>
+                <ArrowBackIosIcon
+                    style={{ fontSize: 40, marginLeft: 30, marginTop: 10, marginBottom: 5, display: 'inline-block' }}
+                    onClick={() => props.history.push('/map')}
+                >
+                </ArrowBackIosIcon>
+            </div>
             <Grid container spacing={2}>
-                <Grid item xs={2}>
-                    <Card className={classes.root}>
-                        <h1>Leaderboard</h1>
+                <Grid item xs={4}>
+                    <Card className={classes.leftRoot}>
+                        <h1 className="area-data-header">NATIVE AREA NAME</h1>
+                        <p className="area-data-value">{locationData["Native Name"]}</p>
+                        <h1 className="area-data-header">RANK</h1>
+                        <p className="area-data-value">{locationData["Rank"]} / {locationData["Total Rank"]}</p>
+                        <h1 className="area-data-header"># OF VIOLATIONS</h1>
+                        <p className="area-data-value">{locationData["Native Violations"]}</p>
+                    </Card>
+                    <Card className={classes.leftBottomRoot}>
+                        <h1 className="violations-header">NON-NATIVE VIOLATIONS TRACKER</h1>
+                        {/* {() => {
+                            const violationsNames = sortViolations(locationData["Non-Native Names"], locationData["Non-Native Violations"])[0]; 
+                            const violationsAmounts = sortViolations(locationData["Non-Native Names"], locationData["Non-Native Violations"])[1];
+                            console.log(violationsNames);
+                            console.log(violationsAmounts);
+
+                            violationsNames.map((name) => {
+                                const nameIndex = violationsNames.indexOf(name);
+                                const violationAmount = violationsAmounts[nameIndex];
+                                return (
+                                    <StandingPlace
+                                        rank={nameIndex + 1}
+                                        violationName={name}
+                                        violationAmount={violationAmount}
+                                    />
+                                )
+                            }); 
+                        }} */}
+                        {violationsNames.map((name) => {
+                            const nameIndex = violationsNames.indexOf(name);
+                            const violationAmount = violationsAmounts[nameIndex];
+                            return (
+                                <StandingPlace
+                                    number={nameIndex + 1}
+                                    violationName={name}
+                                    violationAmount={violationAmount}
+                                />
+                            )
+                        })}
                     </Card>
                 </Grid>
-                <Grid item xs={5}>
-                    <Card className={classes.root}>
-                        <Grid container spacing={1}>
+                <Grid item xs={8}>
+                    <Card className={classes.rightRoot}>
+                        <Grid container spacing={3}>
                             <Grid item xs={12}>
-                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[0]} height="525" width="100%"></iframe>
+                                <div>
+                                    <iframe 
+                                        id="igraph" 
+                                        scrolling="no" 
+                                        style={{ border: "none" }} 
+                                        seamless="seamless" 
+                                        src={embedLinks[3]} 
+                                        height="525" 
+                                        width="100%"
+                                        logo="false"
+                                        link="false"
+                                        modebar="false"
+                                    >
+                                    </iframe>
+                                </div>
                             </Grid>
                             <Grid item xs={12}>
-                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[1]} height="525" width="100%"></iframe>
+                                <div>
+                                    <iframe 
+                                        id="igraph" 
+                                        scrolling="no" 
+                                        style={{ border: "none" }} 
+                                        seamless="seamless" 
+                                        src={embedLinks[0]} 
+                                        height="525" 
+                                        width="100%"
+                                        logo="false"
+                                        link="false"
+                                        modebar="false"
+                                    >
+                                    </iframe>
+                                </div>
                             </Grid>
-                        </Grid>
-                    </Card>
-                </Grid>
-                <Grid item xs={5}>
-                    <Card className={classes.root}>
-                        <Grid container spacing={1}>
                             <Grid item xs={12}>
-                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[2]} height="525" width="100%"></iframe>
+                                <div>
+                                    <iframe 
+                                        id="igraph" 
+                                        scrolling="no" 
+                                        style={{ border: "none" }} 
+                                        seamless="seamless" 
+                                        src={embedLinks[1]} 
+                                        height="525" 
+                                        width="100%"
+                                        logo="false"
+                                        link="false"
+                                        modebar="false"
+                                    >
+                                    </iframe>
+                                </div>
                             </Grid>
                             <Grid item xs={12}>
-                                <iframe id="igraph" scrolling="no" style={{ border: "none" }} seamless="seamless" src={embedLinks[3]} height="525" width="100%"></iframe>
+                                <div>
+                                    <iframe 
+                                        id="igraph" 
+                                        scrolling="no" 
+                                        style={{ border: "none" }} 
+                                        seamless="seamless" 
+                                        src={embedLinks[2]} 
+                                        height="525" 
+                                        width="100%"
+                                        logo="false"
+                                        link="false"
+                                        modebar="false"
+                                    >
+                                    </iframe>
+                                </div>
                             </Grid>
                         </Grid>
                     </Card>
                 </Grid>
             </Grid>
-            <Link to="/">GO TO HOME</Link>
         </div>
     )
 }

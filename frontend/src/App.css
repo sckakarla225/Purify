@@ -140,3 +140,67 @@
 }
 
 /* LOCATION DATA */
+.data-page-container {
+    background: url(./images/data_bg.png) no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100vh;
+}
+
+.area-data-header {
+  font-size: 16px;
+  font-family: rubik, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+
+.area-data-value {
+  font-size: 20px;
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+}
+
+.violations-header {
+  font-size: 18px;
+  font-family: rubik, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+}
+
+.violation-name {
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  display: inline-block; 
+  margin-left: 20px;
+  font-size: 12px;
+}
+
+.violation-amount {
+  font-family: rubik, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-right: 5px;
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.violation-container {
+  width: 100%; 
+  background-color:rgba(119, 179, 212, 0.5);
+  height: 50px; 
+  margin-bottom: 20px;
+  margin-left: 10px;
+  box-shadow: 5px 5px 5px black;
+}
+
+.left-root {
+  background-color: rgba(17, 64, 112, 0.5);
+  margin-left: 20;
+  min-width: 20;
+}
