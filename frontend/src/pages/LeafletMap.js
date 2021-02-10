@@ -12,15 +12,15 @@ import L from 'leaflet';
 import { LocationInfoPopup } from '../components/LocationInfoPopup';
 import { Legend } from '../components/Legend';
 import logo from '../logo.svg';
+import redWater from './red_water_icon.png'; 
+import greenWater from './green_water_icon.png'; 
+import yellowWater from './yellow_water_icon.png'; 
+import grayWater from './gray_water_icon.png'; 
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
 import { requirePropFactory } from '@material-ui/core';
 
-const markerIcon = new L.Icon({
-    iconUrl: require('../images/gray_water_icon.png'), 
-    iconSize: [25, 25],
-});
 
 export const LeafletMap = () => {
     const { locations } = useContext(WaterContext); 
@@ -29,24 +29,31 @@ export const LeafletMap = () => {
     const [selectedLocationID, setSelectedLocationID] = useState("");
 
     const determineRisk = (percentile) => {
-        if (percentile >= 60) {
+        if (percentile === 0) {
+            const grayIcon = new L.Icon({
+                iconUrl: grayWater, 
+                iconSize: [25, 35], 
+            });
+            
+            return grayIcon; 
+        } else if (percentile >= 60) {
             const redIcon = new L.Icon({
-                iconUrl: '../', 
-                iconSize: [25, 25], 
+                iconUrl: redWater, 
+                iconSize: [25, 35], 
             });
 
             return redIcon; 
         } else if (percentile <= 60 & percentile >= 10) {
             const yellowIcon = new L.Icon({
-                iconUrl: '/yellow_water.svg', 
-                iconSize: [25, 25], 
+                iconUrl: yellowWater, 
+                iconSize: [25, 35], 
             });
             
             return yellowIcon; 
         } else if (percentile <= 10) {
             const greenIcon = new L.Icon({
-                iconUrl: '/green_water.svg', 
-                iconSize: [25, 25], 
+                iconUrl: greenWater, 
+                iconSize: [25, 35], 
             });
             
             return greenIcon; 
@@ -120,6 +127,7 @@ export const LeafletMap = () => {
                                     console.log(location);
                                     console.log(locationID);
                                 }}
+                                icon={determineRisk(location["Percentile"])}
                             >
                                 <Popup>
                                     <LocationInfoPopup 
