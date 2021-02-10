@@ -6,6 +6,7 @@ import '../App.css';
 import greenIcon from '../images/green_water_icon.png'; 
 import yellowIcon from '../images/yellow_water_icon.png';
 import redIcon from '../images/red_water_icon.png';
+import grayIcon from '../images/gray_water_icon.png'; 
 
 export const Legend = () => {
 
@@ -46,6 +47,18 @@ export const Legend = () => {
                     marginLeft: 10,
                 }}>
                     Relatively Low Risk
+                </p>
+            </div>
+            <div className="row">
+                <img src={grayIcon} style={{ height: 40, width: 35, display: "inline-block" }} />
+                <p className="legend-description" style={{ 
+                    display: "inline-block",
+                    marginTop: -15,
+                    verticalAlign: 'middle',
+                    fontSize: 14, 
+                    marginLeft: 10,
+                }}>
+                    NO DATA FOUND
                 </p>
             </div>
         </div>
