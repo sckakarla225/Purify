@@ -28,8 +28,8 @@ export const LeafletMap = () => {
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [selectedLocationID, setSelectedLocationID] = useState("");
 
-    const determineRisk = (percentile) => {
-        if (percentile === 0) {
+    const determineRisk = (percentile, checks) => {
+        if (checks === 0.0) {
             const grayIcon = new L.Icon({
                 iconUrl: grayWater, 
                 iconSize: [25, 35], 
@@ -61,6 +61,7 @@ export const LeafletMap = () => {
             return "Error"
         }
     }
+
 
     return (
         <div>
@@ -127,7 +128,7 @@ export const LeafletMap = () => {
                                     console.log(location);
                                     console.log(locationID);
                                 }}
-                                icon={determineRisk(location["Percentile"])}
+                                icon={determineRisk(location["Percentile"], location["Checks"])}
                             >
                                 <Popup>
                                     <LocationInfoPopup 

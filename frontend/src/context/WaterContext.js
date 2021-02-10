@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import data from '../waterdata_4.json';
+import data from '../waterdata.json';
 
 export const WaterContext = createContext();
 
