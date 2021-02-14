@@ -46,6 +46,7 @@ export const Home = () => {
                         </div>
                     </div>
                     <p style={{ textAlign: "center", marginTop: 50 }}>CA Water Data Challenge</p>
+                    
                 </div>
             </Drawer>
             <MenuRoundedIcon 
