@@ -14,6 +14,7 @@ import { Menu } from '../components/Menu';
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
+import { Hidden } from '@material-ui/core';
 
 export const Home = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -29,6 +30,7 @@ export const Home = () => {
                 anchor='left' 
                 open={menuOpen} 
                 onClose={() => setMenuOpen(false)}
+                style={{ overflow: 'hidden' }}
             >
                 <div>
                     <div className="row">
@@ -45,8 +47,18 @@ export const Home = () => {
                             <Link to="/map" className="menu-buttons">WATER MAP</Link>
                         </div>
                     </div>
-                    <p style={{ textAlign: "center", marginTop: 50 }}>CA Water Data Challenge</p>
-                    
+                    <p 
+                        className="menu-water-header"
+                        style={{ textAlign: "center", marginTop: 40, fontSize: 14 }}
+                    >
+                        CA Water Data Challenge
+                    </p>
+                    <p 
+                        className="menu-names"
+                        style={{ textAlign: "center", margin: 15, fontSize: 14 }}
+                    >
+                        Ansh Motiani, Aditya Gupta, <br /> Samhith Kakarla
+                    </p>
                 </div>
             </Drawer>
             <MenuRoundedIcon 
@@ -76,6 +88,12 @@ export const Home = () => {
                     style={{ fontSize: 30, marginLeft: 15 }}
                 />
             </Link>
+            <section className="home-about-section">
+                <h1></h1>
+            </section>
+            <footer className="home-page-footer">
+
+            </footer>
         </div>
     )
 }

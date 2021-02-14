@@ -7,7 +7,7 @@
     font-weight: bold;
     display: block;
     margin: auto;
-    margin-top: 50px; 
+    margin-top: 40px; 
     text-align: center;
     height: 35px; 
     width: 170px; 
@@ -42,12 +42,27 @@
   font-style: normal;
 }
 
+.menu-water-header {
+  font-family: rubik, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  border-bottom: 2px solid rgba(119, 179, 212, 0.5); 
+  padding-bottom: 10px;
+}
+
+.menu-names {
+  font-family: rubik, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 /* HOME */
 .home-page-container {
     height: 100vh;
     background: url(./images/home_bg.png) no-repeat center center fixed;
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .home-header-tag {
@@ -85,6 +100,15 @@
 
 .home-button:hover {
   background-color: white;
+}
+
+.home-about-section {
+  background-color: white;
+  height: 550px; 
+}
+
+.home-page-footer {
+  height: 200px;
 }
 
 /* INTERACTIVE MAP  */
