@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core/styles';
 import logo from '../logo.svg';
 import PropTypes from 'prop-types';
 import '../App.css';
@@ -11,10 +12,25 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 // COMPONENTS
 import { Menu } from '../components/Menu';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
 import { Hidden } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      textAlign: 'center',
+      color: theme.palette.text.secondary,
+      backgroundColor: '#114070',
+      margin: 25,
+      height: 475, 
+    },
+}));
 
 export const Home = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -23,6 +39,8 @@ export const Home = () => {
     useEffect(() => {
         getLocations(); 
     }, []);
+
+    const classes = useStyles(); 
 
     return (
         <div className="home-page-container">
@@ -89,7 +107,18 @@ export const Home = () => {
                 />
             </Link>
             <section className="home-about-section">
-                <h1></h1>
+                <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6}>
+                        <Paper className={classes.paper}>
+                            
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <Paper className={classes.paper}>
+                            
+                        </Paper>
+                    </Grid>
+                </Grid>
             </section>
             <footer className="home-page-footer">
 
