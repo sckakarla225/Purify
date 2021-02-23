@@ -104,12 +104,37 @@
 
 .home-about-section {
   background-color: white;
-  height: 550px; 
+  height: 750px; 
   margin-top: 40px; 
 }
 
 .home-page-footer {
   height: 200px;
+}
+
+#home-creators-header {
+  font-family: rubik, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  margin-bottom: 10px; 
+}
+
+#home-name-header {
+    font-family: rubik, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#home-school-header {
+    font-family: rubik, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#home-role-header {
+    font-family: rubik, sans-serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 /* INTERACTIVE MAP  */

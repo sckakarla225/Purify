@@ -12,8 +12,10 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
 // COMPONENTS
 import { Menu } from '../components/Menu';
+import { NameCard } from '../components/NameCard'; 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import creatorOne from '../images/Samhith_Kakarla_Profile_Pic.jpg'; 
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
@@ -28,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.text.secondary,
       backgroundColor: '#114070',
       margin: 25,
-      height: 475, 
+      height: 670, 
     },
 }));
 
@@ -115,7 +117,22 @@ export const Home = () => {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Paper className={classes.paper}>
-                            
+                            <h1 
+                                style={{ color: 'white', padding: 30, textAlign: 'left', fontSize: 30 }}
+                                id="home-creators-header"
+                            >
+                                CREATORS
+                            </h1>
+                            <div style={{ marginTop: -40 }}>
+                                <NameCard />
+                                <NameCard />
+                                <NameCard 
+                                    picture={creatorOne} 
+                                    name="SAMHITH KAKARLA"  
+                                    school="Green Level High School"
+                                    role="WEB DEVELOPER"
+                                />
+                            </div>
                         </Paper>
                     </Grid>
                 </Grid>
