@@ -109,8 +109,10 @@
 }
 
 .home-about-team-section {
-  background-color: white;
+  background-color: #77B3D4;
   height: 450px;  
+  margin-top: -5px;
+  padding-top: 20px;
 }
 
 .home-page-footer {

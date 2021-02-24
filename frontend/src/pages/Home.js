@@ -118,51 +118,52 @@ export const Home = () => {
             </Link>
             <section className="home-about-section">
                 <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paperTwo}>
-                            <h1 
-                                style={{ color: 'white', padding: 30, textAlign: 'left', fontSize: 15 }}
-                                id="home-creators-header"
-                            >
-                                CLEAN WATER DISCRIMINATION: <br /> 
+                    <Grid item xs={12}>
+                        <div style={{ margin: 'auto' }}>
+                            <Paper className={classes.paperTwo}>
                                 <h1 
-                                    style={{ color: 'white', padding: 5, textAlign: 'left', fontSize: 25, marginBottom: -15 }}
+                                    style={{ color: 'white', padding: 30, textAlign: 'center', fontSize: 25 }}
                                     id="home-creators-header"
                                 >
-                                    The Native American Water Crisis
+                                    CLEAN WATER DISCRIMINATION: <br /> 
+                                    <h1 
+                                        style={{ color: 'white', padding: 5, textAlign: 'center', fontSize: 35, marginBottom: -15 }}
+                                        id="home-creators-header"
+                                    >
+                                        The Native American Water Crisis
+                                    </h1>
                                 </h1>
-                            </h1>
-                            <InfoAccordian />
-                        </Paper>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paperTwo}>
-                            <h1 
-                                style={{ color: 'white', padding: 30, textAlign: 'left', fontSize: 30 }}
-                                id="home-creators-header"
-                            >
-                                CREATORS
-                            </h1>
-                            <div style={{ marginTop: -40 }}>
-                                <NameCard 
-                                    name="ANSH MOTIANI"
-                                />
-                                <NameCard
-                                    name="ADITYA GUPTA"
-                                />
-                                <NameCard 
-                                    picture={creatorOne} 
-                                    name="SAMHITH KAKARLA"  
-                                    school="Green Level High School"
-                                    role="WEB DEVELOPER"
-                                />
-                            </div>
-                        </Paper>
+                                <InfoAccordian />
+                            </Paper>
+                        </div>
                     </Grid>
                 </Grid>
             </section>
             <section className="home-about-team-section">
-
+                <Grid item xs={12} sm={6}>
+                    <Paper className={classes.paperTwo}>
+                        <h1 
+                            style={{ color: 'white', padding: 30, textAlign: 'center', fontSize: 30 }}
+                            id="home-creators-header"
+                        >
+                            CREATORS
+                        </h1>
+                        <div style={{ marginTop: -40 }}>
+                            <NameCard 
+                                name="ANSH MOTIANI"
+                            />
+                            <NameCard
+                                name="ADITYA GUPTA"
+                            />
+                            <NameCard 
+                                picture={creatorOne} 
+                                name="SAMHITH KAKARLA"  
+                                school="Green Level High School"
+                                role="WEB DEVELOPER"
+                            />
+                        </div>
+                    </Paper>
+                </Grid>
             </section>
             <footer className="home-page-footer">
 

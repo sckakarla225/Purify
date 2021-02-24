@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
       margin: 'auto', 
     },
     heading: {
-      fontSize: 20,
+      fontSize: 25,
       fontWeight: theme.typography.fontWeightRegular,
       padding: 5, 
     },
