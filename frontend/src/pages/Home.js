@@ -31,13 +31,15 @@ const useStyles = makeStyles((theme) => ({
       color: theme.palette.text.secondary,
       backgroundColor: 'white',
       margin: 25,
-      height: 670, 
+      height: 800, 
       marginTop: 50,
+      width: '60%',
+      margin: 'auto',
     },
     paperTwo: {
         textAlign: 'center',
         color: theme.palette.text.secondary,
-        backgroundColor: '#114070',
+        backgroundColor: 'transparent',
         margin: 25,
         height: 670, 
     },
@@ -121,7 +123,7 @@ export const Home = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <div style={{ margin: 'auto' }}>
-                            <Paper className={classes.paperTwo}>
+                            <div className={classes.paperTwo}>
                                 <h1 
                                     style={{ color: 'white', padding: 30, textAlign: 'center', fontSize: 25 }}
                                     id="home-creators-header"
@@ -135,14 +137,14 @@ export const Home = () => {
                                     </h1>
                                 </h1>
                                 <InfoAccordian />
-                                <Paper className={classes.paper}>
+                                <div className={classes.paper}>
                                     <h1 
                                         style={{ color: 'black', padding: 30, textAlign: 'center', fontSize: 30 }}
                                         id="home-creators-header"
                                     >
                                         CREATORS
                                     </h1>
-                                    <div style={{ marginTop: -40 }}>
+                                    <div style={{ marginTop: -30 }}>
                                         <NameCard 
                                             name="ANSH MOTIANI"
                                         />
@@ -156,8 +158,8 @@ export const Home = () => {
                                             role="WEB DEVELOPER"
                                         />
                                     </div>
-                                </Paper>
-                            </Paper>
+                                </div>
+                            </div>
                         </div>
                     </Grid>
                 </Grid>
