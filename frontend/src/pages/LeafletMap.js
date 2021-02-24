@@ -74,7 +74,8 @@ export const LeafletMap = () => {
                 <div>
                     <div className="row">
                         <MenuRoundedIcon
-                            style={{ fontSize: 30, marginLeft: 15, marginTop: 10 }}
+                            className="menu-icon"
+                            style={{ fontSize: 30 }}
                             onClick={() => setMenuOpen(false)}
                         ></MenuRoundedIcon>
                     </div>
@@ -88,13 +89,11 @@ export const LeafletMap = () => {
                     </div>
                     <p 
                         className="menu-water-header"
-                        style={{ textAlign: "center", marginTop: 40, fontSize: 14 }}
                     >
                         CA Water Data Challenge
                     </p>
                     <p 
                         className="menu-names"
-                        style={{ textAlign: "center", margin: 15, fontSize: 14 }}
                     >
                         Ansh Motiani, Aditya Gupta, <br /> Samhith Kakarla
                     </p>

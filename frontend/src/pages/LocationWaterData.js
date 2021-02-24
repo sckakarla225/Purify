@@ -77,12 +77,16 @@ export const LocationWaterData = (props) => {
                 setLocationData(location);
                 setEmbedLinks(location["Embed"]);
                 console.log(location["Non-Native Names"]);
+                
                 location["Non-Native Names"].reverse();
                 location["Non-Native Violations"].reverse();
+                
                 location["Non-Native Names"].splice(location["Rank"] - 1, 0, location["Native Name"]);
                 location["Non-Native Violations"].splice(location["Rank"] - 1, 0, location["Native Violations"]); 
+                
                 console.log(location["Non-Native Names"]); 
                 console.log(location["Non-Native Violations"]); 
+                
                 setViolationsNames(location["Non-Native Names"]);
                 setViolationsAmounts(location["Non-Native Violations"]); 
             }
@@ -100,7 +104,8 @@ export const LocationWaterData = (props) => {
                 <div>
                     <div className="row">
                         <MenuRoundedIcon
-                            style={{ fontSize: 30, marginLeft: 15, marginTop: 10 }}
+                            className="menu-icon"
+                            style={{ fontSize: 30 }}
                             onClick={() => setMenuOpen(false)}
                         ></MenuRoundedIcon>
                     </div>
@@ -114,13 +119,11 @@ export const LocationWaterData = (props) => {
                     </div>
                     <p 
                         className="menu-water-header"
-                        style={{ textAlign: "center", marginTop: 40, fontSize: 14 }}
                     >
                         CA Water Data Challenge
                     </p>
                     <p 
                         className="menu-names"
-                        style={{ textAlign: "center", margin: 15, fontSize: 14 }}
                     >
                         Ansh Motiani, Aditya Gupta, <br /> Samhith Kakarla
                     </p>

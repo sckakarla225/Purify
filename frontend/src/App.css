@@ -1,4 +1,6 @@
 
+/* DEFAULT LAPTOP SCREENS */
+
 /* MENU  */
 .menu-buttons {
     border: none; 
@@ -48,12 +50,24 @@
   font-style: normal;
   border-bottom: 2px solid rgba(119, 179, 212, 0.5); 
   padding-bottom: 10px;
+  font-size: 14px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 .menu-names {
   font-family: rubik, sans-serif;
   font-weight: 300;
   font-style: normal;
+  font-size: 14px;
+  margin: 15px;
+  text-align: center;
+}
+
+.menu-icon {
+  margin-top: 10px; 
+  margin-left: 15px;
+  font-size: 30px; 
 }
 
 /* HOME */
@@ -327,4 +341,355 @@
   background-color: rgba(17, 64, 112, 0.5);
   margin-left: 20;
   min-width: 20;
+}
+
+
+
+/* DESKTOP SCREENS */
+
+
+@media only screen and (min-width: 1910px) {
+    /* MENU */
+    .menu-buttons {
+      border: none; 
+      background-color: #77B3D4;
+      font-size: 25px; 
+      font-weight: bold;
+      display: block;
+      margin: auto;
+      margin-top: 50px; 
+      text-align: center;
+      height: 55px; 
+      width: 275px; 
+      text-decoration: none;
+      color: black;
+      padding-top: 25px; 
+      border-bottom: 5px solid grey;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+  
+    .menu-logo {
+      height: 200px; 
+      width: 200px;
+      margin: auto;
+      display: block;
+      margin-top: 30px;
+    }
+    
+    .menu-buttons:hover {
+        background-color: rgba(119, 179, 212, 0.5);
+    }
+    
+    .menu-buttons-container {
+      display: inline-block;
+    }
+    
+    .menu-header {
+      text-align: center;
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 45px;
+    }
+    
+    .menu-water-header {
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      border-bottom: 2px solid rgba(119, 179, 212, 0.5); 
+      padding-bottom: 10px;
+      font-size: 20px;
+      margin-top: 60px;
+      text-align: center;
+    }
+    
+    .menu-names {
+      font-family: rubik, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 18px;
+      margin: 15px;
+      text-align: center;
+    }
+    
+    .menu-icon {
+      margin-top: 10px; 
+      margin-left: 15px;
+      font-size: 5px;
+    }
+
+    
+    /* HOME */
+    .home-page-container {
+        height: 100vh;
+        background: url(./images/home_bg.png) no-repeat center center fixed;
+        background-size: cover;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    
+    .home-header-tag {
+      font-size: 40px;
+      color: white;
+      text-shadow: 3px 3px 4px #000000;
+      margin-left: 80px;
+      margin-right: 200px;
+      margin-top: 10px;
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 1.4;
+    }
+    
+    .home-button {
+        border: none; 
+        background-color: #77B3D4;
+        font-size: 20px; 
+        display: block;
+        float: right;
+        text-align: center;
+        height: 45px; 
+        width: 300px; 
+        text-decoration: none;
+        color: black;
+        padding-top: 5px; 
+        margin-top: -200px;
+        margin-right: 30px;
+        box-shadow: 5px 5px 5px black;
+        font-family: rubik, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+    
+    .home-button:hover {
+      background-color: white;
+    }
+    
+    .home-about-section {
+      background-color: white;
+      height: 750px; 
+      margin-top: 40px; 
+    }
+    
+    .home-about-team-section {
+      background-color: #77B3D4;
+      height: 450px;  
+      margin-top: -5px;
+      padding-top: 20px;
+    }
+    
+    .home-page-footer {
+      height: 400px;
+      background-color: white;
+    }
+    
+    #home-creators-header {
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      margin-bottom: 10px; 
+    }
+    
+    #home-name-header {
+        font-family: rubik, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+    
+    #home-school-header {
+        font-family: rubik, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+    }
+    
+    #home-role-header {
+        font-family: rubik, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+    
+    #home-info-name-header {
+        font-family: rubik, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+    }
+    
+    #home-info-p {
+        margin-top: 0px;
+        text-align: left;
+        padding-left: 5px;
+        font-family: rubik, sans-serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 18px;
+        line-height: 1.5;
+    }
+    
+    #footer-name-header {
+        font-family: rubik, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        display: inline-block; 
+        color: black;
+        font-size: 40px;
+        border-bottom: 4px solid #77B3D4;
+        padding-bottom: 20px;
+    }
+    
+    #footer-challenge-header {
+        font-family: rubik, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 25px;
+        margin-bottom: 35px;
+        color: black;
+        border-bottom: 4px solid #77B3D4;
+        padding-bottom: 10px;
+    }
+    
+    .footer-email {
+      font-family: rubik, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 16px;
+      color: black;
+    }
+    
+    /* INTERACTIVE MAP  */
+    .legend-container {
+        height: 195px;
+        width: 190px;
+        background-color: white;
+        box-shadow: 10px 10px 8px #888888;
+        margin-top: 50px;
+        margin-left: 10px;
+        padding: 20px;
+    }
+    
+    .legend-description {
+      font-family: rubik, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+    
+    .legend-title {
+      font-family: rubik, sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+    
+    .popup-header {
+      font-size: 18px;
+      font-family: rubik, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+    }
+    
+    .popup-info {
+      font-size: 16px;
+      text-align: center;
+      font-weight: 600;
+      font-style: normal;
+      text-align: center;
+    }
+    
+    .explore-data-button {
+        border: none; 
+        background-color: #77B3D4;
+        font-size: 15px; 
+        font-weight: bold;
+        display: block;
+        margin: auto;
+        margin-top: 50px; 
+        text-align: center;
+        height: 30px; 
+        width: 150px; 
+        text-decoration: none;
+        color: black;
+        padding-top: 15px; 
+        border-bottom: 5px solid grey;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .leaflet-map-container {
+      width: 80%;
+      height: 100vh;
+      float: right;
+      display: inline-block;
+    }
+    
+    .map-info-container {
+      width: 20%;
+      height: 100vh;
+      display: inline-block;
+    }
+    
+    /* LOCATION DATA */
+    .data-page-container {
+        background: url(./images/data_bg.png) no-repeat center center fixed;
+        background-size: cover;
+        overflow-x: hidden;
+        height: 100vh;
+    }
+    
+    .area-data-header {
+      font-size: 16px;
+      font-family: rubik, sans-serif;
+      font-weight: 500;
+      font-style: normal;
+      text-align: center;
+    }
+    
+    .area-data-value {
+      font-size: 20px;
+      font-family: rubik, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      text-align: center;
+    }
+    
+    .violations-header {
+      font-size: 18px;
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      text-align: center;
+    }
+    
+    .violation-name {
+      font-family: rubik, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      display: inline-block; 
+      margin-left: 20px;
+      font-size: 12px;
+    }
+    
+    .violation-amount {
+      font-family: rubik, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      margin-right: 5px;
+      display: inline-block;
+      margin-left: 20px;
+      font-size: 18px;
+    }
+    
+    .violation-container {
+      width: 100%; 
+      background-color:rgba(119, 179, 212, 0.5);
+      height: 50px; 
+      margin-bottom: 20px;
+      margin-left: 10px;
+      box-shadow: 5px 5px 5px black;
+    }
+    
+    .left-root {
+      background-color: rgba(17, 64, 112, 0.5);
+      margin-left: 20;
+      min-width: 20;
+    }
 }
