@@ -163,11 +163,25 @@ export const Home = () => {
                         </div>
                     </Grid>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                    
-                </Grid>
             <footer className="home-page-footer">
-
+                <div style={{ backgroundColor: 'transparent', width: '60%', height: 300, margin: 'auto', marginTop: 150 }}>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} sm={6}>
+                            <img src={logo} style={{ height: 300, width: 300, marginLeft: 40, marginTop: 15 }} />
+                        </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <div>
+                                <h1 id="footer-name-header">
+                                    PURIFY
+                                </h1>
+                                <p id="footer-challenge-header">CA WATER DATA CHALLENGE</p>
+                                <p className="footer-email">anshmotiani@gmail.com</p>
+                                <p className="footer-email">adisguptag@gmail.com</p>
+                                <p className="footer-email">samhith.kakarla@gmail.com</p>
+                            </div>
+                        </Grid>
+                    </Grid>
+                </div>
             </footer>
         </div>
     )
