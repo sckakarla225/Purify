@@ -29,9 +29,10 @@ const useStyles = makeStyles((theme) => ({
     paper: {
       textAlign: 'center',
       color: theme.palette.text.secondary,
-      backgroundColor: '#77B3D4',
+      backgroundColor: 'white',
       margin: 25,
       height: 670, 
+      marginTop: 50,
     },
     paperTwo: {
         textAlign: 'center',
@@ -116,7 +117,7 @@ export const Home = () => {
                     style={{ fontSize: 30, marginLeft: 15 }}
                 />
             </Link>
-            <section className="home-about-section">
+            
                 <Grid container spacing={3}>
                     <Grid item xs={12}>
                         <div style={{ margin: 'auto' }}>
@@ -134,37 +135,35 @@ export const Home = () => {
                                     </h1>
                                 </h1>
                                 <InfoAccordian />
+                                <Paper className={classes.paper}>
+                                    <h1 
+                                        style={{ color: 'black', padding: 30, textAlign: 'center', fontSize: 30 }}
+                                        id="home-creators-header"
+                                    >
+                                        CREATORS
+                                    </h1>
+                                    <div style={{ marginTop: -40 }}>
+                                        <NameCard 
+                                            name="ANSH MOTIANI"
+                                        />
+                                        <NameCard
+                                            name="ADITYA GUPTA"
+                                        />
+                                        <NameCard 
+                                            picture={creatorOne} 
+                                            name="SAMHITH KAKARLA"  
+                                            school="Green Level High School"
+                                            role="WEB DEVELOPER"
+                                        />
+                                    </div>
+                                </Paper>
                             </Paper>
                         </div>
                     </Grid>
                 </Grid>
-            </section>
-            <section className="home-about-team-section">
                 <Grid item xs={12} sm={6}>
-                    <Paper className={classes.paperTwo}>
-                        <h1 
-                            style={{ color: 'white', padding: 30, textAlign: 'center', fontSize: 30 }}
-                            id="home-creators-header"
-                        >
-                            CREATORS
-                        </h1>
-                        <div style={{ marginTop: -40 }}>
-                            <NameCard 
-                                name="ANSH MOTIANI"
-                            />
-                            <NameCard
-                                name="ADITYA GUPTA"
-                            />
-                            <NameCard 
-                                picture={creatorOne} 
-                                name="SAMHITH KAKARLA"  
-                                school="Green Level High School"
-                                role="WEB DEVELOPER"
-                            />
-                        </div>
-                    </Paper>
+                    
                 </Grid>
-            </section>
             <footer className="home-page-footer">
 
             </footer>
