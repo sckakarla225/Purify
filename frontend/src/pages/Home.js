@@ -13,6 +13,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 // COMPONENTS
 import { Menu } from '../components/Menu';
 import { NameCard } from '../components/NameCard'; 
+import { InfoAccordian } from '../components/InfoAccordian'; 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import creatorOne from '../images/Samhith_Kakarla_Profile_Pic.jpg'; 
@@ -28,9 +29,16 @@ const useStyles = makeStyles((theme) => ({
     paper: {
       textAlign: 'center',
       color: theme.palette.text.secondary,
-      backgroundColor: '#114070',
+      backgroundColor: '#77B3D4',
       margin: 25,
       height: 670, 
+    },
+    paperTwo: {
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+        backgroundColor: '#114070',
+        margin: 25,
+        height: 670, 
     },
 }));
 
@@ -111,12 +119,24 @@ export const Home = () => {
             <section className="home-about-section">
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paper}>
-                            
+                        <Paper className={classes.paperTwo}>
+                            <h1 
+                                style={{ color: 'white', padding: 30, textAlign: 'left', fontSize: 15 }}
+                                id="home-creators-header"
+                            >
+                                CLEAN WATER DISCRIMINATION: <br /> 
+                                <h1 
+                                    style={{ color: 'white', padding: 5, textAlign: 'left', fontSize: 25, marginBottom: -15 }}
+                                    id="home-creators-header"
+                                >
+                                    The Native American Water Crisis
+                                </h1>
+                            </h1>
+                            <InfoAccordian />
                         </Paper>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Paper className={classes.paper}>
+                        <Paper className={classes.paperTwo}>
                             <h1 
                                 style={{ color: 'white', padding: 30, textAlign: 'left', fontSize: 30 }}
                                 id="home-creators-header"
@@ -124,8 +144,12 @@ export const Home = () => {
                                 CREATORS
                             </h1>
                             <div style={{ marginTop: -40 }}>
-                                <NameCard />
-                                <NameCard />
+                                <NameCard 
+                                    name="ANSH MOTIANI"
+                                />
+                                <NameCard
+                                    name="ADITYA GUPTA"
+                                />
                                 <NameCard 
                                     picture={creatorOne} 
                                     name="SAMHITH KAKARLA"  
@@ -136,6 +160,9 @@ export const Home = () => {
                         </Paper>
                     </Grid>
                 </Grid>
+            </section>
+            <section className="home-about-team-section">
+
             </section>
             <footer className="home-page-footer">
 

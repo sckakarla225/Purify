@@ -108,6 +108,11 @@
   margin-top: 40px; 
 }
 
+.home-about-team-section {
+  background-color: white;
+  height: 450px;  
+}
+
 .home-page-footer {
   height: 200px;
 }
@@ -135,6 +140,23 @@
     font-family: rubik, sans-serif;
     font-weight: 500;
     font-style: normal;
+}
+
+#home-info-name-header {
+    font-family: rubik, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#home-info-p {
+    margin-top: 0px;
+    text-align: left;
+    padding-left: 5px;
+    font-family: rubik, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 /* INTERACTIVE MAP  */
