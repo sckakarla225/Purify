@@ -19,6 +19,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import creatorOne from '../images/Samhith_Kakarla_Profile_Pic.jpg'; 
 import creatorTwo from '../images/Aditya_Gupta_Profile_Pic.jpg'; 
+import creatorThree from '../images/Ansh_Motiani_Profile_Pic.jpeg'; 
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
@@ -157,8 +158,9 @@ export const Home = () => {
                                             role="DATA SCIENTIST"
                                         />
                                         <NameCard 
+                                            picture={creatorThree}
                                             name="ANSH MOTIANI"
-                                            school=""
+                                            school="St. John's Prep High School"
                                             role="DATA SCIENTIST"
                                         />
                                         <NameCard 
