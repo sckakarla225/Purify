@@ -17,6 +17,7 @@ import { InfoAccordian } from '../components/InfoAccordian';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import creatorOne from '../images/Samhith_Kakarla_Profile_Pic.jpg'; 
+import creatorTwo from '../images/Aditya_Gupta_Profile_Pic.jpg'; 
 
 // CONTEXT
 import { WaterContext } from '../context/WaterContext';
@@ -145,7 +146,10 @@ export const Home = () => {
                                             name="ANSH MOTIANI"
                                         />
                                         <NameCard
+                                            picture={creatorTwo}
                                             name="ADITYA GUPTA"
+                                            school="Panther Creek High School"
+                                            role="DATA SCIENTIST"
                                         />
                                         <NameCard 
                                             picture={creatorOne} 
