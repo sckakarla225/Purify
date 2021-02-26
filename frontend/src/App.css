@@ -765,7 +765,7 @@
     
     /* INTERACTIVE MAP  */
     .legend-container {
-        height: 345px;
+        height: 335px;
         width: 280px;
         background-color: white;
         box-shadow: 10px 10px 8px #888888;
@@ -781,7 +781,7 @@
       display: inline-block; 
       font-size: 18px;
       vertical-align: middle;
-      margin-top: -15px;
+      margin-top: -10px;
       margin-left: 10px;
     }
     
@@ -791,7 +791,7 @@
       font-style: normal;
       font-size: 20px;
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     
     .legend-icon {
