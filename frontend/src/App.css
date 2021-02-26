@@ -70,6 +70,37 @@
   font-size: 30px; 
 }
 
+#welcome-modal-title {
+  font-family: rubik, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#welcome-modal-body {
+  font-family: rubik, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+#welcome-modal-button {
+  font-family: rubik, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #114070;
+}
+
+#welcome-modal-logo {
+  height: 150px; 
+  width: 150px; 
+  margin: auto;
+  margin-left: 175px; 
+}
+
 /* HOME */
 .home-page-container {
     height: 100vh;
@@ -501,6 +532,32 @@
       font-size: 5px;
     }
 
+    #welcome-modal-title {
+      font-family: rubik, sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    #welcome-modal-body {
+      font-family: rubik, sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+
+    #welcome-modal-button {
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      color: #114070;
+    }
+
+    #welcome-modal-logo {
+      height: 150px; 
+      width: 150px; 
+      margin: auto;
+      margin-left: 175px; 
+    }
+
     
     /* HOME */
     .home-page-container {
@@ -857,4 +914,17 @@
       margin-left: 20;
       min-width: 20;
     }
+}
+
+
+
+/* PHONE SCREENS */
+
+@media only screen and (max-width: 400px) {
+  #welcome-modal-logo {
+    height: 150px; 
+    width: 150px; 
+    margin: auto;
+    margin-left: 65px; 
+  }
 }

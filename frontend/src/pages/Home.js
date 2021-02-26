@@ -14,6 +14,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import { Menu } from '../components/Menu';
 import { NameCard } from '../components/NameCard'; 
 import { InfoAccordian } from '../components/InfoAccordian'; 
+import { WelcomeModal } from '../components/WelcomeModal'; 
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import creatorOne from '../images/Samhith_Kakarla_Profile_Pic.jpg'; 
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const Home = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [welcomeModalShow, setWelcomeModalShow] = useState(true); 
     const { getLocations } = useContext(WaterContext);
 
     useEffect(() => {
@@ -57,7 +59,13 @@ export const Home = () => {
     const classes = useStyles(); 
 
     return (
-        <div className="home-page-container">
+        <div className="home-page-container"> 
+            <WelcomeModal
+                show={welcomeModalShow}
+                onHide={() => setWelcomeModalShow(false)}
+                backdrop="static"
+                keyboard={false}
+            />
             <Drawer 
                 anchor='left' 
                 open={menuOpen} 
@@ -142,13 +150,15 @@ export const Home = () => {
                                         CREATORS
                                     </h1>
                                     <div className="home-names-container">
-                                        <NameCard 
-                                            name="ANSH MOTIANI"
-                                        />
                                         <NameCard
                                             picture={creatorTwo}
                                             name="ADITYA GUPTA"
                                             school="Panther Creek High School"
+                                            role="DATA SCIENTIST"
+                                        />
+                                        <NameCard 
+                                            name="ANSH MOTIANI"
+                                            school=""
                                             role="DATA SCIENTIST"
                                         />
                                         <NameCard 
