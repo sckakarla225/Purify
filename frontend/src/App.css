@@ -1,4 +1,19 @@
 
+@font-face {
+  font-family: myFontRegular; 
+  src: url('./images/rubik_regular.ttf'), url('./images/rubik-regular.eot'); 
+}
+
+@font-face {
+  font-family: myFontLight; 
+  src: url('./images/rubik-light.ttf'), url('./images/rubik-light.eot');
+}
+
+@font-face {
+  font-family: myFontBold;
+  src: url('./images/rubik-bold.ttf'), url('./images/rubik-bold.eot');
+}
+
 /* DEFAULT LAPTOP SCREENS */
 
 /* MENU  */
@@ -39,13 +54,13 @@
 
 .menu-header {
   text-align: center;
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
 }
 
 .menu-water-header {
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
   border-bottom: 2px solid rgba(119, 179, 212, 0.5); 
@@ -56,7 +71,7 @@
 }
 
 .menu-names {
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 14px;
@@ -71,7 +86,7 @@
 }
 
 #welcome-modal-title {
-  font-family: rubik, sans-serif;
+  font-family: myFontRegular, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
@@ -79,7 +94,7 @@
 }
 
 #welcome-modal-body {
-  font-family: rubik, sans-serif;
+  font-family: myFontRegular, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
@@ -88,7 +103,7 @@
 }
 
 #welcome-modal-button {
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
   color: #114070;
@@ -117,7 +132,7 @@
   margin-left: 80px;
   margin-right: 200px;
   margin-top: 10px;
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
   line-height: 1.4;
@@ -138,7 +153,7 @@
     margin-top: -200px;
     margin-right: 30px;
     box-shadow: 5px 5px 5px black;
-    font-family: rubik, sans-serif;
+    font-family: myFontBold, sans-serif;
     font-weight: 700;
     font-style: normal;
 }
@@ -174,7 +189,7 @@
 }
 
 #home-creators-header {
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
   margin-bottom: 10px; 
@@ -186,25 +201,25 @@
 }
 
 #home-name-header {
-    font-family: rubik, sans-serif;
+    font-family: myFontBold, sans-serif;
     font-weight: 700;
     font-style: normal;
 }
 
 #home-school-header {
-    font-family: rubik, sans-serif;
+    font-family: myFontLight, sans-serif;
     font-weight: 300;
     font-style: normal;
 }
 
 #home-role-header {
-    font-family: rubik, sans-serif;
+    font-family: myFontRegular, sans-serif;
     font-weight: 500;
     font-style: normal;
 }
 
 #home-info-name-header {
-    font-family: rubik, sans-serif;
+    font-family: myFontBold, sans-serif;
     font-weight: 700;
     font-style: normal;
     font-size: 25px;
@@ -230,7 +245,7 @@
     margin-top: 0px;
     text-align: left;
     padding-left: 5px;
-    font-family: rubik, sans-serif;
+    font-family: myFontLight, sans-serif;
     font-weight: 300;
     font-style: normal;
     font-size: 18px;
@@ -261,7 +276,7 @@
 }
 
 #footer-name-header {
-    font-family: rubik, sans-serif;
+    font-family: myFontBold, sans-serif;
     font-weight: 700;
     font-style: normal;
     display: inline-block; 
@@ -272,7 +287,7 @@
 }
 
 #footer-challenge-header {
-    font-family: rubik, sans-serif;
+    font-family: myFontRegular, sans-serif;
     font-weight: 500;
     font-style: normal;
     font-size: 25px;
@@ -283,7 +298,7 @@
 }
 
 .footer-email {
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 16px;
@@ -302,7 +317,7 @@
 }
 
 .legend-description {
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 300;
   font-style: normal;
   display: inline-block; 
@@ -313,7 +328,7 @@
 }
 
 .legend-title {
-  font-family: rubik, sans-serif;
+  font-family: myFontRegular, sans-serif;
   font-weight: 500;
   font-style: normal;
   font-size: 14px;
@@ -328,7 +343,7 @@
 
 .popup-header {
   font-size: 18px;
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -384,7 +399,7 @@
 
 .map-header {
   text-align: center;
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 35px;
@@ -400,7 +415,7 @@
 
 .area-data-header {
   font-size: 16px;
-  font-family: rubik, sans-serif;
+  font-family: myFontRegular, sans-serif;
   font-weight: 500;
   font-style: normal;
   text-align: center;
@@ -408,7 +423,7 @@
 
 .area-data-value {
   font-size: 20px;
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -416,14 +431,14 @@
 
 .violations-header {
   font-size: 18px;
-  font-family: rubik, sans-serif;
+  font-family: myFontBold, sans-serif;
   font-weight: 700;
   font-style: normal;
   text-align: center;
 }
 
 .violation-name {
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 400;
   font-style: normal;
   display: inline-block; 
@@ -432,7 +447,7 @@
 }
 
 .violation-amount {
-  font-family: rubik, sans-serif;
+  font-family: myFontLight, sans-serif;
   font-weight: 400;
   font-style: normal;
   margin-right: 5px;
@@ -500,14 +515,14 @@
     
     .menu-header {
       text-align: center;
-      font-family: rubik, sans-serif;
-      font-weight: 700;
+      font-family: myFontBold, sans-serif;
+      
       font-style: normal;
       font-size: 45px;
     }
     
     .menu-water-header {
-      font-family: rubik, sans-serif;
+      font-family: myFontBold, sans-serif;
       font-weight: 700;
       font-style: normal;
       border-bottom: 2px solid rgba(119, 179, 212, 0.5); 
@@ -518,7 +533,7 @@
     }
     
     .menu-names {
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 300;
       font-style: normal;
       font-size: 18px;
@@ -533,19 +548,19 @@
     }
 
     #welcome-modal-title {
-      font-family: rubik, sans-serif;
+      font-family: myFontRegular, sans-serif;
       font-weight: 500;
       font-style: normal;
     }
 
     #welcome-modal-body {
-      font-family: rubik, sans-serif;
+      font-family: myFontRegular, sans-serif;
       font-weight: 500;
       font-style: normal;
     }
 
     #welcome-modal-button {
-      font-family: rubik, sans-serif;
+      font-family: myFontBold, sans-serif;
       font-weight: 700;
       font-style: normal;
       color: #114070;
@@ -575,7 +590,7 @@
       margin-left: 100px;
       margin-right: 200px;
       margin-top: 30px;
-      font-family: rubik, sans-serif;
+      font-family: myFontBold, sans-serif;
       font-weight: 700;
       font-style: normal;
       line-height: 1.4;
@@ -604,7 +619,7 @@
         margin-top: -300px;
         margin-right: 80px;
         box-shadow: 5px 5px 5px black;
-        font-family: rubik, sans-serif;
+        font-family: myFontBold, sans-serif;
         font-weight: 700;
         font-style: normal;
     }
@@ -632,7 +647,7 @@
     }
     
     #home-creators-header {
-      font-family: rubik, sans-serif;
+      font-family: myFontBold, sans-serif;
       font-weight: 700;
       font-style: normal;
       margin-bottom: 10px; 
@@ -643,25 +658,25 @@
     }
     
     #home-name-header {
-        font-family: rubik, sans-serif;
+        font-family: myFontBold, sans-serif;
         font-weight: 700;
         font-style: normal;
     }
     
     #home-school-header {
-        font-family: rubik, sans-serif;
+        font-family: myFontLight, sans-serif;
         font-weight: 300;
         font-style: normal;
     }
     
     #home-role-header {
-        font-family: rubik, sans-serif;
+        font-family: myFontRegular, sans-serif;
         font-weight: 500;
         font-style: normal;
     }
     
     #home-info-name-header {
-        font-family: rubik, sans-serif;
+        font-family: myFontBold, sans-serif;
         font-weight: 700;
         font-style: normal;
         font-size: 35px;
@@ -687,7 +702,7 @@
         margin-top: 0px;
         text-align: left;
         padding-left: 5px;
-        font-family: rubik, sans-serif;
+        font-family: myFontLight, sans-serif;
         font-weight: 300;
         font-style: normal;
         font-size: 25px;
@@ -719,7 +734,7 @@
     
     
     #footer-name-header {
-        font-family: rubik, sans-serif;
+        font-family: myFontBold, sans-serif;
         font-weight: 700;
         font-style: normal;
         display: inline-block; 
@@ -730,7 +745,7 @@
     }
     
     #footer-challenge-header {
-        font-family: rubik, sans-serif;
+        font-family: myFontRegular, sans-serif;
         font-weight: 500;
         font-style: normal;
         font-size: 25px;
@@ -741,7 +756,7 @@
     }
     
     .footer-email {
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 300;
       font-style: normal;
       font-size: 16px;
@@ -760,7 +775,7 @@
     }
     
     .legend-description {
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 300;
       font-style: normal;
       display: inline-block; 
@@ -771,7 +786,7 @@
     }
     
     .legend-title {
-      font-family: rubik, sans-serif;
+      font-family: myFontRegular, sans-serif;
       font-weight: 500;
       font-style: normal;
       font-size: 20px;
@@ -787,7 +802,7 @@
 
     .popup-header {
       font-size: 18px;
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 400;
       font-style: normal;
       text-align: center;
@@ -843,7 +858,7 @@
 
     .map-header {
       text-align: center;
-      font-family: rubik, sans-serif;
+      font-family: myFontBold, sans-serif;
       font-weight: 700;
       font-style: normal;
       font-size: 60px;
@@ -859,7 +874,7 @@
     
     .area-data-header {
       font-size: 16px;
-      font-family: rubik, sans-serif;
+      font-family: myFontRegular, sans-serif;
       font-weight: 500;
       font-style: normal;
       text-align: center;
@@ -867,7 +882,7 @@
     
     .area-data-value {
       font-size: 20px;
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 400;
       font-style: normal;
       text-align: center;
@@ -875,14 +890,14 @@
     
     .violations-header {
       font-size: 18px;
-      font-family: rubik, sans-serif;
+      font-family: myFontBold, sans-serif;
       font-weight: 700;
       font-style: normal;
       text-align: center;
     }
     
     .violation-name {
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 400;
       font-style: normal;
       display: inline-block; 
@@ -891,7 +906,7 @@
     }
     
     .violation-amount {
-      font-family: rubik, sans-serif;
+      font-family: myFontLight, sans-serif;
       font-weight: 400;
       font-style: normal;
       margin-right: 5px;
