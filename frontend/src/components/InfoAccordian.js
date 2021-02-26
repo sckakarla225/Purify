@@ -10,11 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '70%',
       margin: 'auto', 
-    },
-    heading: {
-      fontSize: 25,
-      fontWeight: theme.typography.fontWeightRegular,
-      padding: 5, 
+      marginBottom: 50, 
     },
     accordian: {
         backgroundColor: '#77B3D4',
@@ -32,7 +28,7 @@ export const InfoAccordian = () => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <Typography className={classes.heading} id="home-info-name-header">THE PROBLEM</Typography>
+                    <Typography id="home-info-name-header">THE PROBLEM</Typography>
                 </AccordionSummary>
                 <AccordionDetails>
                     <p id="home-info-p">

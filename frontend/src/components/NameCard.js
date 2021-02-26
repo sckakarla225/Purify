@@ -10,13 +10,7 @@ const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
     },
     paper: {
-      textAlign: 'center',
       color: theme.palette.text.secondary,
-      backgroundColor: '#114070',
-      height: 210, 
-      width: 600, 
-      margin: 25, 
-      marginLeft: 60, 
     },
     picture: {
         height: 185, 
@@ -54,7 +48,7 @@ export const NameCard = ({ picture, name, school, role }) => {
 
     return (
         <div>
-            <Paper className={classes.paper}>
+            <Paper className={classes.paper} id="name-card-container">
                 <img 
                     src={picture} 
                     className={classes.picture}

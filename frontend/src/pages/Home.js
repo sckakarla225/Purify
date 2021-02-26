@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: 'white',
       margin: 25,
       height: 800, 
-      marginTop: 50,
+      marginTop: 70,
       width: '60%',
       margin: 'auto',
     },
@@ -102,13 +102,12 @@ export const Home = () => {
                 <iframe 
                     id="igraph" 
                     scrolling="no" 
-                    style={{ border: "none", marginRight: 100 }} 
                     seamless="seamless" 
                     src="https://plotly.com/~amotiani22/33.embed" 
-                    height="300" width="750"
                     logo="false"
                     link="false"
                     modebar="false"
+                    className="home-graph"
                 >
                 </iframe>
             </div>
@@ -124,26 +123,24 @@ export const Home = () => {
                         <div style={{ margin: 'auto' }}>
                             <div className={classes.paperTwo}>
                                 <h1 
-                                    style={{ color: 'white', padding: 30, textAlign: 'center', fontSize: 25 }}
-                                    id="home-creators-header"
+                                    id="home-info-clean-water-header"
                                 >
                                     CLEAN WATER DISCRIMINATION: <br /> 
                                     <h1 
-                                        style={{ color: 'white', padding: 5, textAlign: 'center', fontSize: 35, marginBottom: -15 }}
-                                        id="home-creators-header"
+                                        id="home-info-native-american-header"
                                     >
                                         The Native American Water Crisis
                                     </h1>
                                 </h1>
                                 <InfoAccordian />
-                                <div className={classes.paper}>
+                                <div className="home-creators-paper">
                                     <h1 
                                         style={{ color: 'black', padding: 30, textAlign: 'center', fontSize: 30 }}
                                         id="home-creators-header"
                                     >
                                         CREATORS
                                     </h1>
-                                    <div style={{ marginTop: -30 }}>
+                                    <div className="home-names-container">
                                         <NameCard 
                                             name="ANSH MOTIANI"
                                         />
@@ -174,7 +171,7 @@ export const Home = () => {
                                     PURIFY
                                 </h1>
                                 <p id="footer-challenge-header">CA WATER DATA CHALLENGE</p>
-                                <p className="footer-email">anshmotiani@gmail.com</p>
+                                <p className="footer-email">anshmotiani47@gmail.com</p>
                                 <p className="footer-email">adisguptag@gmail.com</p>
                                 <p className="footer-email">samhith.kakarla@gmail.com</p>
                             </div>
