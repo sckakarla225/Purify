@@ -274,12 +274,25 @@
   font-family: rubik, sans-serif;
   font-weight: 300;
   font-style: normal;
+  display: inline-block; 
+  font-size: 14px;
+  vertical-align: middle;
+  margin-top: -15px;
+  margin-left: 10px;
 }
 
 .legend-title {
   font-family: rubik, sans-serif;
   font-weight: 500;
   font-style: normal;
+  font-size: 14px;
+  text-align: center;
+}
+
+.legend-icon {
+  height: 40px;
+  width: 35px;
+  display: inline-block;
 }
 
 .popup-header {
@@ -664,12 +677,12 @@
     
     /* INTERACTIVE MAP  */
     .legend-container {
-        height: 195px;
-        width: 190px;
+        height: 345px;
+        width: 280px;
         background-color: white;
         box-shadow: 10px 10px 8px #888888;
         margin-top: 50px;
-        margin-left: 10px;
+        margin-left: 30px;
         padding: 20px;
     }
     
@@ -677,14 +690,28 @@
       font-family: rubik, sans-serif;
       font-weight: 300;
       font-style: normal;
+      display: inline-block; 
+      font-size: 18px;
+      vertical-align: middle;
+      margin-top: -15px;
+      margin-left: 10px;
     }
     
     .legend-title {
       font-family: rubik, sans-serif;
       font-weight: 500;
       font-style: normal;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 40px;
     }
     
+    .legend-icon {
+      height: 60px;
+      width: 55px;
+      display: inline-block;
+    }
+
     .popup-header {
       font-size: 18px;
       font-family: rubik, sans-serif;
@@ -731,6 +758,22 @@
       width: 20%;
       height: 100vh;
       display: inline-block;
+    }
+
+    .map-logo {
+      height: 250px; 
+      width: 250px;
+      margin: auto;
+      display: block;
+      margin-top: 60px;
+    }
+
+    .map-header {
+      text-align: center;
+      font-family: rubik, sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-size: 60px;
     }
     
     /* LOCATION DATA */

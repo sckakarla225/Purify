@@ -109,8 +109,8 @@ export const LeafletMap = () => {
                         ></MenuRoundedIcon>
                     </div>
                     <div className="row">
-                        <img src={logo} className="menu-logo" />
-                        <h1 className="menu-header">PURIFY</h1>
+                        <img src={logo} className="map-logo" />
+                        <h1 className="map-header">PURIFY</h1>
                     </div>
                     <p style={{ textAlign: "center", marginTop: 20 }}>CA Water Data Challenge</p>
                     <Legend />
