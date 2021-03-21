@@ -58,13 +58,13 @@ export const MapInfoModal = (props) => {
         <div>
             <Dialog onClose={props.onHide} aria-labelledby="customized-dialog-title" open={props.show}>
                 <DialogTitle dividers>
-                    <img src={logo} id="welcome-modal-logo" />
-                    <p id="welcome-modal-body">
+                    <img src={logo} id="map-info-modal-logo" />
+                    <p id="map-info-modal-body">
                         Click the Water Icons on the Map to View Data about that Region!
                     </p>
                 </DialogTitle>
                 <DialogActions>
-                <Button onClick={props.onHide} color="primary" id="welcome-modal-button">
+                <Button onClick={props.onHide} color="primary" id="map-info-modal-button">
                     CLOSE
                 </Button>
                 </DialogActions>
