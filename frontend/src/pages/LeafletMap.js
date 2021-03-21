@@ -11,6 +11,7 @@ import { MapContainer, Popup, TileLayer, Marker } from 'react-leaflet';
 import L from 'leaflet';
 import { LocationInfoPopup } from '../components/LocationInfoPopup';
 import { Legend } from '../components/Legend';
+import { MapInfoModal } from '../components/MapInfoModal';
 import logo from '../logo.svg';
 import redWater from './red_water_icon.png'; 
 import greenWater from './green_water_icon.png'; 
@@ -25,6 +26,7 @@ import { requirePropFactory } from '@material-ui/core';
 export const LeafletMap = () => {
     const { locations } = useContext(WaterContext); 
     const [menuOpen, setMenuOpen] = useState(false);
+    const [mapInfoModalShow, setMapInfoModalShow] = useState(true); 
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [selectedLocationID, setSelectedLocationID] = useState("");
 
@@ -65,6 +67,12 @@ export const LeafletMap = () => {
 
     return (
         <div>
+            <MapInfoModal 
+                show={mapInfoModalShow}
+                onHide={() => setMapInfoModalShow(false)}
+                backdrop="static"
+                keyboard={false}
+            />
             <Drawer 
                 anchor='left' 
                 open={menuOpen} 

@@ -116,6 +116,37 @@
   margin-left: 175px; 
 }
 
+#map-info-modal-title {
+  font-family: myFontRegular, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  margin-top: 40px;
+}
+
+#map-info-modal-body {
+  font-family: myFontRegular, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+#map-info-modal-button {
+  font-family: myFontBold, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  color: #114070;
+}
+
+#map-info-modal-logo {
+  height: 150px; 
+  width: 150px; 
+  margin: auto;
+  margin-left: 175px; 
+}
+
 /* HOME */
 .home-page-container {
     height: 100vh;
