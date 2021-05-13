@@ -61,6 +61,7 @@ export const WelcomeModal = (props) => {
                 <DialogContent dividers>
                     <img src={logo} id="welcome-modal-logo" />
                     <p id="welcome-modal-body">Please use a Desktop or Laptop to View this Website!</p>
+                    <p id="welcome-modal-body">(Safari not supported)</p>
                     <p id="welcome-modal-title">THANK YOU!</p>
                 </DialogContent>
                 <DialogActions>

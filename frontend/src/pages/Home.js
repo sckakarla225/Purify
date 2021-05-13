@@ -164,7 +164,7 @@ export const Home = () => {
                                             role="DATA SCIENTIST"
                                         />
                                         <NameCard 
-                                            picture={creatorOne} 
+                                            picture={logo} 
                                             name="SAMHITH KAKARLA"  
                                             school="Green Level High School"
                                             role="WEB DEVELOPER"
